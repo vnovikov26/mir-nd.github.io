@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мир Недвижимости Дмитров — спокойная сделка</title>
+  <meta name="description" content="Бутик-агентство Ирины Скляровой: переезд Москва — Дмитров, ипотека с сертификатами, опека, удалённые сделки." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://mir-nd.ru/" />
+
+  <!-- Favicon (inline SVG data-URI) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234a5a46'/><text y='.85em' font-size='52' text-anchor='middle' x='50' fill='%23e8c9a4' font-family='Georgia,serif' font-weight='bold'>МН</text></svg>" />
+  <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mir-nd.ru/" />
+  <meta property="og:title" content="Мир Недвижимости Дмитров — спокойная сделка" />
+  <meta property="og:description" content="Бутик-агентство Ирины Скляровой: переезд Москва — Дмитров, ипотека с сертификатами, опека, удалённые сделки." />
+  <meta property="og:image" content="https://mir-nd.ru/og-image.jpg" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="Мир Недвижимости Дмитров" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Мир Недвижимости Дмитров — спокойная сделка" />
+  <meta name="twitter:description" content="Бутик-агентство Ирины Скляровой: переезд Москва — Дмитров, ипотека с сертификатами, опека, удалённые сделки." />
+  <meta name="twitter:image" content="https://mir-nd.ru/og-image.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f4eadc;
+      --bg-2: #efe1cf;
+      --paper: #fff8ef;
+      --ink: #2a241e;
+      --muted: #7a6e62;
+      --line: #ead9c4;
+      --olive: #4a5a46;
+      --olive-deep: #3a4738;
+      --honey: #e8c9a4;
+      --clay: #c4785a;
+      --blush: #f0d9c8;
+      --serif: "Lora", Georgia, serif;
+      --sans: "Nunito Sans", "Segoe UI", sans-serif;
+      --r: 28px;
+      --r-sm: 18px;
+    }
+
+    /* Visually hidden — accessible labels for screen readers */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.55;
+      background:
+        radial-gradient(900px 520px at 8% -10%, #f8e6d2 0%, transparent 62%),
+        radial-gradient(700px 480px at 100% 12%, #ead7c4 0%, transparent 55%),
+        var(--bg);
+    }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+
+    header { padding: 22px 0 10px; }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      background: var(--olive);
+      color: var(--honey);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .brand b { display: block; font-size: 16px; line-height: 1.2; }
+    .brand small {
+      color: var(--muted);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .nav-links {
+      margin-left: auto;
+      display: flex;
+      gap: 20px;
+      font-size: 15px;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--clay); }
+    .phone { font-weight: 800; }
+    .menu-btn { display: none; background: none; border: 0; font-size: 24px; cursor: pointer; color: var(--ink); }
+
+    .hero { padding: 36px 0 28px; }
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(38px, 5.5vw, 72px);
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      margin: 0 0 10px;
+      max-width: 14ch;
+    }
+    .hero .tagline {
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.4vw, 28px);
+      font-style: italic;
+      font-weight: 500;
+      line-height: 1.3;
+      margin: 0 0 16px;
+      color: var(--olive-deep);
+    }
+    .kicker {
+      margin: 0 0 10px;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--clay);
+      font-weight: 700;
+    }
+    .lead {
+      font-size: 17px;
+      max-width: 48ch;
+      margin: 0 0 26px;
+      color: #4d453d;
+    }
+    .hero-row {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+    .pills { display: flex; gap: 10px; flex-wrap: wrap; }
+    .pill {
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--olive);
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .2s;
+    }
+    .pill:hover { opacity: .9; transform: translateY(-1px); }
+    .pill.solid {
+      background: var(--olive);
+      color: #fff8ef;
+      border-color: var(--olive);
+    }
+    .hero-aside {
+      width: 100%;
+      max-width: 380px;
+      justify-self: end;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 100%;
+    }
+    .hero-note {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      background: var(--olive);
+      color: #f7efe4;
+      border-radius: 36px 36px 36px 14px;
+      padding: 26px 24px 22px;
+    }
+    .hero-note .num {
+      font-family: var(--serif);
+      font-size: 46px;
+      line-height: 1;
+      color: var(--honey);
+      margin: 0 0 8px;
+    }
+    .hero-note p { margin: 0; font-size: 14px; line-height: 1.45; }
+    .hero-note-more {
+      padding-top: 14px;
+      border-top: 1px solid rgba(232, 201, 164, .35);
+      color: var(--honey);
+      font-size: 13px !important;
+    }
+    .hero-slot {
+      display: block;
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: var(--paper);
+      color: var(--ink);
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(30, 24, 16, .08);
+      border: 1px solid var(--line);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .hero-slot:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(30, 24, 16, .14);
+    }
+    .hero-slot .kicker { margin: 0 0 4px; font-size: 11px; }
+    .hero-slot-time {
+      font-family: var(--serif);
+      font-size: 24px;
+      line-height: 1.1;
+      margin: 0 0 4px;
+      color: var(--olive-deep);
+    }
+    .hero-slot-meta {
+      margin: 0 0 8px;
+      font-size: 13px;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+    .hero-slot-go {
+      display: inline-flex;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--olive-deep);
+    }
+    .hero-slot-go::after { content: " →"; }
+    .hero-slot.is-full { opacity: .72; filter: grayscale(.3); }
+    .hero-slot.is-full .hero-slot-go { color: var(--muted); }
+
+    .section { padding: 56px 0; }
+    .section-head { max-width: 38rem; margin-bottom: 30px; }
+    .section-head h2, h2 {
+      font-family: var(--serif);
+      font-size: clamp(26px, 3vw, 34px);
+      line-height: 1.25;
+      font-weight: 600;
+      margin: 0 0 10px;
+    }
+    .section-lead { margin: 0; color: var(--muted); font-size: 16px; }
+
+    /* Блок руководителя */
+    .letter-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .portrait {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #6a7a64, var(--olive-deep));
+      color: var(--honey);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .initials { font-family: var(--serif); font-size: 64px; line-height: 1; }
+    .portrait small { display: block; margin-top: 6px; font-size: 13px; color: #f0e2cf; }
+    blockquote {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.2vw, 26px);
+      line-height: 1.4;
+      font-weight: 500;
+      color: var(--olive-deep);
+    }
+    .proof { margin-top: 36px; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .stats div {
+      background: var(--paper);
+      border-radius: 20px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+    }
+    .stats b {
+      display: block;
+      font-family: var(--serif);
+      font-size: 32px;
+      line-height: 1;
+      color: var(--olive-deep);
+      margin-bottom: 6px;
+    }
+    .awards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .awards span {
+      background: var(--olive);
+      color: var(--honey);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+    .crew .kicker { margin-bottom: 12px; }
+    .crew-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .crew-list article {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--paper);
+      border-radius: 999px;
+      padding: 8px 14px 8px 8px;
+      border: 1px solid var(--line);
+    }
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--olive);
+      color: var(--honey);
+      display: grid;
+      place-items: center;
+      font-family: var(--serif);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .crew-list b { display: block; font-size: 14px; }
+    .crew-list p { margin: 0; color: var(--muted); font-size: 12px; }
+
+    /* Ситуации */
+    .sit-list { display: grid; gap: 8px; }
+    .sit {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      width: 100%;
+      text-align: left;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 14px 18px;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .sit:hover { border-color: var(--clay); }
+    .sit.active {
+      border-color: var(--olive);
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(74, 58, 40, .06);
+    }
+    .dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--blush);
+      color: var(--olive-deep);
+      font-weight: 800;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    .sit.active .dot { background: var(--olive); color: var(--honey); }
+    .sit .ttl {
+      margin: 0 0 2px;
+      font-size: 17px;
+      font-family: var(--serif);
+      font-weight: 600;
+      display: block;
+    }
+    .sit p { margin: 0; color: var(--muted); font-size: 14px; }
+    .detail {
+      margin-top: 14px;
+      background: var(--olive-deep);
+      color: #f7efe4;
+      border-radius: 28px;
+      padding: 24px 26px;
+      display: grid;
+      grid-template-columns: 1.5fr .8fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .detail h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      margin: 0 0 8px;
+      color: var(--honey);
+    }
+    .detail p { margin: 0; font-size: 15px; line-height: 1.5; }
+
+    /* Доска vs Агентство */
+    .honest-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .col { padding: 28px; }
+    .col.a {
+      background: var(--blush);
+      border-radius: 28px 28px 10px 28px;
+    }
+    .col.b {
+      background: var(--olive);
+      color: #f7efe4;
+      border-radius: 28px 28px 28px 10px;
+    }
+    .col h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      margin: 0 0 10px;
+      font-weight: 600;
+    }
+    .col p { margin: 0 0 8px; font-size: 15px; }
+
+    /* Шаги */
+    .step-list { display: grid; gap: 8px; }
+    .step {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 8px 14px;
+      background: var(--paper);
+      border-radius: var(--r-sm);
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+    }
+    .step .n {
+      font-family: var(--serif);
+      font-size: 26px;
+      color: var(--clay);
+      line-height: 1;
+    }
+    .step b { display: block; margin-bottom: 2px; font-size: 16px; }
+    .step p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    /* Дмитров */
+    .place {
+      background: var(--paper); /* fallback для старых браузеров */
+      background: color-mix(in srgb, var(--paper) 85%, transparent);
+      border-radius: 36px;
+      padding: 36px;
+      border: 1px solid var(--line);
+    }
+    .place-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+    .place-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .place-points article, .place-extra article {
+      background: var(--paper);
+      border-radius: 20px;
+      padding: 18px;
+      border: 1px solid var(--line);
+    }
+    .place-points b, .place-extra b {
+      display: block;
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .place-points p, .place-extra p { margin: 0; font-size: 13.5px; color: var(--muted); }
+    .place-extra {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .place-source {
+      margin: 14px 0 0;
+      font-size: 11.5px;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .stat { display: flex; flex-wrap: wrap; gap: 8px; }
+    .stat div {
+      flex: 1 1 120px;
+      background: var(--paper);
+      border-radius: 999px;
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+    .stat b { display: block; font-family: var(--serif); font-size: 18px; color: var(--olive-deep); }
+
+    /* FAQ */
+    .faq details {
+      background: var(--paper);
+      border-radius: 18px;
+      padding: 6px 18px;
+      margin-bottom: 8px;
+      border: 1px solid var(--line);
+    }
+    summary { cursor: pointer; font-weight: 700; padding: 10px 0; font-size: 15px; }
+    details p { color: var(--muted); margin: 0 0 12px; font-size: 14px; }
+
+    /* Слоты и формы */
+    .reply {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 28px;
+      align-items: stretch;
+      background: var(--paper);
+      border-radius: 36px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      transition: opacity .25s ease, filter .25s ease;
+    }
+    .reply.is-full {
+      opacity: .65;
+      filter: grayscale(.4);
+      background: #efe8dc;
+    }
+    .reply-status { font-weight: 800; color: var(--olive-deep); margin: 0 0 12px; font-size: 14px; }
+    .slot {
+      background: var(--bg);
+      border-radius: 24px;
+      padding: 22px;
+      border: 1px solid var(--line);
+    }
+    .slot-time {
+      font-family: var(--serif);
+      font-size: clamp(26px, 2.5vw, 32px);
+      margin: 0 0 4px;
+      line-height: 1.1;
+      color: var(--olive-deep);
+    }
+    .slot-meta { margin: 0 0 14px; color: var(--muted); font-size: 13px; }
+    .slot-form { display: grid; gap: 8px; margin-bottom: 12px; }
+    .slot-form input, .form input, .form select, .form textarea {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: var(--paper);
+      width: 100%;
+    }
+    .slot-form .btn:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+      filter: grayscale(.4);
+    }
+    .slot-note { margin: 0 0 12px; font-size: 13px; color: var(--muted); }
+
+    .ask {
+      background: var(--olive-deep);
+      color: #f7efe4;
+      border-radius: 36px;
+      padding: 36px;
+    }
+    .ask-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .ask h2 { color: #f7efe4; }
+    .ask .kicker { color: var(--honey); }
+    .form { display: grid; gap: 10px; }
+    .btn {
+      background: var(--honey);
+      color: var(--olive-deep);
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 20px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      transition: all .2s;
+    }
+    .btn:hover { opacity: .9; transform: translateY(-1px); }
+    .btn-white { background: #fff; color: var(--olive-deep); }
+    .legal-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .legal-check input { width: auto; margin-top: 2px; }
+    .ask .legal-check { color: #d0c4b4; }
+
+    .toast {
+      display: none;
+      padding: 12px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid var(--honey);
+      border-radius: 12px;
+      font-size: 13px;
+      color: var(--honey);
+      text-align: center;
+    }
+
+    footer {
+      padding: 32px 0 88px;
+      font-size: 12.5px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      margin-top: 40px;
+    }
+    .foot {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 20px;
+    }
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      gap: 8px;
+      z-index: 50;
+    }
+    .mobile-bar a {
+      flex: 1;
+      text-align: center;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 999px;
+      background: var(--olive);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      box-shadow: 0 4px 14px rgba(0,0,0,.15);
+    }
+    .mobile-bar a.wa { background: #2e7d32; }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 16px;
+        top: 70px;
+        background: var(--paper);
+        border-radius: 20px;
+        padding: 18px;
+        box-shadow: 0 12px 40px rgba(0,0,0,.12);
+        border: 1px solid var(--line);
+        z-index: 100;
+      }
+      .menu-btn { display: block; margin-left: auto; }
+      .hero-row, .honest-grid, .letter-grid, .place-grid, .place-points, .place-extra, .ask-grid, .foot, .detail, .stats, .crew-list, .reply {
+        grid-template-columns: 1fr;
+      }
+      .hero-aside, .portrait { width: 100%; max-width: none; }
+      .portrait { height: 180px; }
+      .place, .ask, .reply { padding: 22px; border-radius: 24px; }
+      .mobile-bar { display: flex; }
+    }
+  </style>
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Мир Недвижимости",
+    "url": "https://mir-nd.ru/",
+    "telephone": "+79031016640",
+    "email": "info@mir-nd.ru",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Профессиональная, д. 3, ТД «Юбилейный», оф. 3–4–5",
+      "addressLocality": "Дмитров",
+      "addressRegion": "Московская область",
+      "postalCode": "141800",
+      "addressCountry": "RU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 56.3455,
+      "longitude": 37.5239
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "10:00",
+        "closes": "18:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "100",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Ирина Склярова"
+    },
+    "legalName": "ООО «МИР НЕДВИЖИМОСТИ»",
+    "taxID": "5007105467"
+  }
+  </script>
+</head>
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <div class="brand-logo">МН</div>
+        <span><b>Мир Недвижимости</b><small>Дмитров · ТД «Юбилейный»</small></span>
+      </a>
+      <button class="menu-btn" type="button" aria-label="Меню" id="menuToggle" aria-expanded="false" aria-controls="navLinks">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#irina">Ирина</a>
+        <a href="#situations">Ситуации</a>
+        <a href="#how">Маршрут</a>
+        <a href="#dmitrov">Дмитров</a>
+        <a href="#reply">Окно связи</a>
+        <a href="#ask">Контакты</a>
+        <a class="phone" href="tel:+79031016640">+7 903 101-66-40</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="wrap hero-row">
+      <div>
+        <p class="kicker">Сертифицированное бутик-агентство</p>
+        <h1>Мир Недвижимости</h1>
+        <p class="tagline">Сделку можно провести спокойно.</p>
+        <p class="lead">Агентство Ирины Скляровой: три постоянных специалиста, которые доводят сложные сделки до Росреестра. Опека, сертификаты, цепочки «Москва — Дмитров» — лично и удалённо.</p>
+        <div class="pills">
+          <a class="pill solid" href="#irina">Познакомиться</a>
+          <a class="pill" href="https://wa.me/79031016640" target="_blank" rel="noreferrer">Написать в WhatsApp</a>
+        </div>
+      </div>
+      <aside class="hero-aside">
+        <div class="hero-note">
+          <div>
+            <p class="num">3</p>
+            <p>аттестованных специалиста ведут сделку лично. Без колл-центров и франшиз. Офис в ТЦ «Юбилейный». Оценка 5,0 на Домклик и 2ГИС. «Риелтор года RBG 2025» — Ирина Склярова.</p>
+          </div>
+          <p class="hero-note-more">Берём то, чего доска объявлений не умеет: аудит рисков, опеку, военные и жилищные сертификаты, торг, согласование сроков с банком и регистрацию.</p>
+        </div>
+        <a class="hero-slot" id="hero-slot" href="#reply">
+          <p class="kicker">Ближайшее окно</p>
+          <p class="hero-slot-time" id="hero-slot-time">10:00–12:00</p>
+          <p class="hero-slot-meta" id="hero-slot-meta">Загрузка слотов...</p>
+          <span class="hero-slot-go" id="hero-slot-go">Записаться на консультацию</span>
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="irina">
+    <div class="wrap">
+      <div class="letter-grid">
+        <div class="portrait">
+          <div>
+            <div class="initials">ИС</div>
+            <small>Ирина Склярова</small>
+          </div>
+        </div>
+        <div>
+          <p class="kicker">Личный контроль</p>
+          <h2>Письмо руководителя</h2>
+          <blockquote>«Клиенты приходят не за объявлением с Циана. Они приходят, когда страшно потерять деньги: дети, опека, субсидия, переезд из столицы. В такой момент нужен эксперт, который держит процесс от и до».</blockquote>
+        </div>
+      </div>
+      <div class="proof">
+        <div class="stats">
+          <div><b>2018</b>основала агентство в г. Дмитров</div>
+          <div><b>РГР</b>аттестат брокера до 20.02.2028</div>
+          <div><b>5,0</b>рейтинг доверия на 2ГИС и Домклик</div>
+        </div>
+        <div class="awards">
+          <span>«Звезда Подмосковья» 2022 — юрсопровождение</span>
+          <span>RBG «Люди года» 2023</span>
+          <span>Business Women 2023</span>
+          <span>Риелтор года RBG 2025</span>
+        </div>
+        <div class="crew">
+          <p class="kicker">Команда агентства</p>
+          <div class="crew-list">
+            <article>
+              <span class="avatar">ИС</span>
+              <div>
+                <b>Ирина Склярова</b>
+                <p>Руководитель, брокер</p>
+              </div>
+            </article>
+            <article>
+              <span class="avatar">КА</span>
+              <div>
+                <b>Ксения Афанасьева</b>
+                <p>Эксперт по недвижимости</p>
+              </div>
+            </article>
+            <article>
+              <span class="avatar">ЭК</span>
+              <div>
+                <b>Эльвира Копёнкина</b>
+                <p>Специалист по недвижимости</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="situations">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Сценарии</p>
+        <h2>С какой задачей приходите?</h2>
+        <p class="section-lead">Не шаблонные фильтры, а жизненные обстоятельства. Выберите ситуацию — развернется готовый план действий.</p>
+      </div>
+      <div class="sit-list" id="sits">
+        <button class="sit active" data-id="move" type="button">
+          <span class="dot">01</span>
+          <span>
+            <span class="ttl">Продаю в Москве, покупаю в Дмитрове</span>
+            <p>Двойная сделка, сроки и цепочка — чтобы не зависнуть между квартирами.</p>
+          </span>
+        </button>
+        <button class="sit" data-id="buy" type="button">
+          <span class="dot">02</span>
+          <span>
+            <span class="ttl">Покупаю первый раз или в ипотеку</span>
+            <p>Что проверять, сколько торг, как не переплатить банку по скрытым платежам.</p>
+          </span>
+        </button>
+        <button class="sit" data-id="certs" type="button">
+          <span class="dot">03</span>
+          <span>
+            <span class="ttl">Маткапитал, опека, военный сертификат</span>
+            <p>Сложные сделки, за которые многие не берутся. Для нас это рутинная практика.</p>
+          </span>
+        </button>
+        <button class="sit" data-id="remote" type="button">
+          <span class="dot">04</span>
+          <span>
+            <span class="ttl">Нужно провести всё удалённо</span>
+            <p>Если одна сторона в другом регионе: подготовка и регистрация через офис.</p>
+          </span>
+        </button>
+        <button class="sit" data-id="sell" type="button">
+          <span class="dot">05</span>
+          <span>
+            <span class="ttl">Надо продать без демпинга</span>
+            <p>Точная аналитика, подготовка объекта и выход на реальную рыночную стоимость.</p>
+          </span>
+        </button>
+        <button class="sit" data-id="rent" type="button">
+          <span class="dot">06</span>
+          <span>
+            <span class="ttl">Сдать, снять, коммерция</span>
+            <p>Договор с фиксацией акта описи, проверка арендаторов и расчёты.</p>
+          </span>
+        </button>
+      </div>
+      <div class="detail" id="detail"></div>
+    </div>
+  </section>
+
+  <section class="section" id="compare">
+    <div class="wrap honest-grid">
+      <div class="col a">
+        <h3>Что умеет доска объявлений</h3>
+        <p>Показать фото, цену и телефон продавца. Собрать контакты для спама. Создать иллюзию безопасности.</p>
+        <p>Но она не умеет находить аресты, договариваться с опекой и проверять историю перехода прав.</p>
+      </div>
+      <div class="col b">
+        <h3>Зачем тогда агентство</h3>
+        <p>Ключевой риск спрятан в интервале между согласием продавца и получением выписки из ЕГРН.</p>
+        <p>Мы продаем не доступ к базе. Мы гарантируем безопасность каждого рубля.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Маршрут</p>
+        <h2>Как проходит работа</h2>
+      </div>
+      <div class="step-list">
+        <div class="step"><div class="n">01</div><div><b>Разбор ситуации за 20–30 минут</b><p>Конкретный маршрут: что продаём, что покупаем, где скрыты риски и налоги.</p></div></div>
+        <div class="step"><div class="n">02</div><div><b>Официальный договор</b><p>Прозрачные обязательства. Профессиональная ответственность застрахована в СПАО «РЕСО-Гарантия».</p></div></div>
+        <div class="step"><div class="n">03</div><div><b>Юридическая экспертиза</b><p>Аресты, банкротство, опека, прописанные лица. Если объект сомнительный — аргументированно отговариваем.</p></div></div>
+        <div class="step"><div class="n">04</div><div><b>Переговоры и отстаивание цены</b><p>Аргументированный торг, отсев пустых звонков, синхронизация банковских требований.</p></div></div>
+        <div class="step"><div class="n">05</div><div><b>Сделка и безопасные расчеты</b><p>Офис, МФЦ, нотариус или электронная регистрация. Контролируем перевод средств до акта приема-передачи.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="dmitrov">
+    <div class="wrap">
+      <div class="place">
+        <div class="place-grid">
+          <div>
+            <p class="kicker">Локальный контекст</p>
+            <h2>Дмитров — не дальняя область, а решение</h2>
+            <p>Частый кейс: продать метры в спальном районе Москвы и переехать в комфортный дом или просторную квартиру здесь. Знаем каждый микрорайон и поселок округа.</p>
+          </div>
+          <div class="stat">
+            <div><b>~1 час</b>до Москвы (МЦД/экспресс)</div>
+            <div><b>+15,6%</b>рост земли ИЖС за год</div>
+            <div><b>+10,9%</b>участки по шоссе</div>
+            <div><b>Офис</b>в центре города</div>
+          </div>
+        </div>
+        <div class="place-points">
+          <article>
+            <b>Квартиры для переезда</b>
+            <p>Коридор домов с качественной инфраструктурой под ваш семейный бюджет и сертификат.</p>
+          </article>
+          <article>
+            <b>Готовые дома и коттеджи</b>
+            <p>Проверка коммуникаций (газ, септик, мощности), статуса земли и реальных расходов на отопление.</p>
+          </article>
+          <article>
+            <b>Сделка на месте</b>
+            <p>Офис в ТД «Юбилейный»: очные встречи сторон, проверка документов и удаленная подача в Росреестр.</p>
+          </article>
+        </div>
+        <div class="place-extra">
+          <article>
+            <p class="kicker">Земля</p>
+            <b>Участки под ИЖС</b>
+            <p>Округ лидирует по оформлению частных домов. Проверяем ВРИ, геодезические границы, водоохранные зоны и ограничения на стройку до передачи задатка.</p>
+          </article>
+          <article>
+            <p class="kicker">Дачи</p>
+            <b>СНТ и жилые дома</b>
+            <p>Отличаем летний щитовой домик от строения для круглогодичного проживания с возможностью постоянной прописки и применения маткапитала.</p>
+          </article>
+        </div>
+        <p class="place-source">Статистика предложения: аналитические центры ИНКОМ и МИР КВАРТИР. Итоги регистрации ИЖС по данным Минмособлимущества.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Частые вопросы</h2>
+      </div>
+      <details open>
+        <summary>Почему на сайте нет каталога объектов?</summary>
+        <p>Покупатели и продавцы уже используют Циан, Авито и Домклик. Мы не дублируем доски объявлений. Наша работа — подобрать лучший вариант со всего открытого и закрытого рынка, проверить его и довести сделку до регистрации.</p>
+      </details>
+      <details>
+        <summary>Можно заказать только сопровождение уже найденной квартиры?</summary>
+        <p>Да. Мы проведем полную проверку продавца и истории владения, согласуем форму безопасных расчетов (аккредитив/эскроу) и подготовим проект договора.</p>
+      </details>
+      <details>
+        <summary>Работаете ли вы с маткапиталом, сиротами и опекой?</summary>
+        <p>Да. В нашем портфолио регулярные сделки с субсидиями, сертификатами переселения, военной ипотекой (Росвоенипотека) и распоряжениями органов опеки.</p>
+      </details>
+      <details>
+        <summary>Сколько стоят услуги?</summary>
+        <p>Стоимость зависит от сложности задачи (подбор, альтернатива, проверка готового варианта). Фиксированную сумму мы называем на консультации и закрепляем в договоре.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section" id="reply">
+    <div class="wrap">
+      <div class="reply" id="reply-card">
+        <div class="reply-copy">
+          <p class="kicker">Прямой контакт</p>
+          <h2>Личный ответ руководителя</h2>
+          <p class="reply-status" id="reply-status">Определение статуса...</p>
+          <p>Ирина сама сопровождает сделки, поэтому часто бывает в МФЦ, банках или на показах. Секретарей нет. Напишите в мессенджер: Ирина отвечает лично в выделенные рабочие интервалы (10:00–12:00 и 18:00–20:00). Для срочных вопросов — звоните по телефону.</p>
+        </div>
+        <div class="slot" id="slot-box">
+          <p class="kicker">Ближайшее окно</p>
+          <p class="slot-time" id="slot-time">10:00–12:00</p>
+          <p class="slot-meta" id="slot-meta">Загрузка мест...</p>
+          <form class="slot-form" id="slot-form">
+            <label for="slot-name" class="sr-only">Ваше имя</label>
+            <input id="slot-name" name="name" placeholder="Ваше имя" required autocomplete="name" />
+            <label for="slot-phone" class="sr-only">Телефон для связи</label>
+            <input id="slot-phone" name="phone" type="tel" placeholder="Телефон для связи" required autocomplete="tel" />
+            <div class="legal-check">
+              <input type="checkbox" id="agree-slot" required checked />
+              <label for="agree-slot">Согласен на обработку персональных данных согласно <a href="#privacy-modal" onclick="document.getElementById('privacy-modal').showModal();return false;" style="color:inherit;text-decoration:underline;">Политике конфиденциальности</a></label>
+            </div>
+            <button class="btn" type="submit" id="slot-btn">Забронировать окно</button>
+          </form>
+          <p class="slot-note" id="slot-note"></p>
+          <a class="pill" href="https://wa.me/79031016640" target="_blank" rel="noreferrer">Написать в WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ask">
+    <div class="wrap">
+      <div class="ask">
+        <div class="ask-grid">
+          <div>
+            <p class="kicker">Первый шаг</p>
+            <h2>Опишите вашу ситуацию</h2>
+            <p style="margin-bottom: 24px;">Перезвоним, ответим на вопросы и предложим безопасный план действий.</p>
+            <div style="font-size: 14px; line-height: 1.8;">
+              <span role="img" aria-label="Адрес">📍</span> г. Дмитров, ул. Профессиональная, д. 3 (ТД «Юбилейный»), оф. 3–4–5<br />
+              <span role="img" aria-label="Телефон">📞</span> <a href="tel:+79031016640" style="font-weight:700;">+7 903 101-66-40</a> · <a href="tel:88006008696">8 800 600-86-96</a><br />
+              <span role="img" aria-label="Электронная почта">✉️</span> <a id="email-link" href="#" onclick="var el=document.getElementById('email-link');el.href='mailto:info@mir-nd.ru';el.textContent='info@mir-nd.ru';return true;" style="color:inherit;">Показать email</a><br />
+              <span role="img" aria-label="Режим работы">🕒</span> Пн–Пт: 10:00–18:00 (по записи)
+            </div>
+          </div>
+          <form class="form" id="lead">
+            <label for="lead-name" class="sr-only">Как к вам обращаться</label>
+            <input id="lead-name" name="name" placeholder="Как к вам обращаться?" required autocomplete="name" />
+            <label for="lead-phone" class="sr-only">Номер телефона</label>
+            <input id="lead-phone" name="phone" type="tel" placeholder="Номер телефона" required autocomplete="tel" />
+            <label for="lead-case" class="sr-only">Тип задачи</label>
+            <select name="case" id="lead-case">
+              <option value="Переезд Москва → Дмитров">Переезд Москва → Дмитров</option>
+              <option value="Покупка / ипотека">Покупка / ипотека</option>
+              <option value="Сертификаты и опека">Сертификаты и опека</option>
+              <option value="Удалённая сделка">Удалённая сделка</option>
+              <option value="Продажа">Продажа без демпинга</option>
+              <option value="Аренда / коммерция">Аренда / коммерция</option>
+            </select>
+            <textarea id="lead-msg" name="msg" rows="3" placeholder="Кратко о задаче (например: трешка в Дмитрове, часть маткапиталом)"></textarea>
+            <label for="lead-msg" class="sr-only">Краткое описание задачи</label>
+            <div class="legal-check">
+              <input type="checkbox" id="agree-lead" required checked />
+              <label for="agree-lead">Даю согласие на обработку данных согласно <a href="#privacy-modal" onclick="document.getElementById('privacy-modal').showModal();return false;" style="color:var(--honey);text-decoration:underline;">Политике конфиденциальности</a></label>
+            </div>
+            <button class="btn" type="submit">Отправить заявку</button>
+            <div class="toast" id="toast">Заявка принята! Мы свяжемся с вами в ближайшее рабочее окно.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <b>ООО «МИР НЕДВИЖИМОСТИ»</b><br />
+        ИНН 5007105467 · ОГРН 1185007009230<br />
+        ИП Склярова И. В. · ОГРНИП 320508100015156
+      </div>
+      <div>
+        Сертификат РГР № РОСС РУОС 50 БР 377<br />
+        Страхование ответственности СПАО «РЕСО-Гарантия» № 908/2786198707
+      </div>
+      <div>
+        © 2018–2026 Мир Недвижимости, г. Дмитров.<br />
+        Все права защищены.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Политика конфиденциальности -->
+  <dialog id="privacy-modal" style="max-width:620px;width:calc(100% - 32px);border-radius:20px;border:1px solid var(--line);padding:0;background:var(--paper);color:var(--ink);">
+    <div style="padding:28px 28px 24px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <b style="font-family:var(--serif);font-size:20px;">Политика конфиденциальности</b>
+        <button onclick="document.getElementById('privacy-modal').close()" style="background:none;border:0;font-size:22px;cursor:pointer;color:var(--muted);line-height:1;" aria-label="Закрыть">×</button>
+      </div>
+      <div style="font-size:13px;line-height:1.7;color:var(--muted);max-height:60vh;overflow-y:auto;">
+        <p><b style="color:var(--ink);">Оператор:</b> ООО «МИР НЕДВИЖИМОСТИ» (ИНН 5007105467), ИП Склярова И. В. (ОГРНИП 320508100015156).</p>
+        <p><b style="color:var(--ink);">Какие данные собираются:</b> имя, номер телефона, описание задачи, переданные через формы на сайте mir-nd.ru.</p>
+        <p><b style="color:var(--ink);">Цель обработки:</b> связь с потенциальным клиентом, запись на консультацию, подбор недвижимости.</p>
+        <p><b style="color:var(--ink);">Основание обработки:</b> согласие субъекта персональных данных (ч. 1 ст. 9 Федерального закона № 152-ФЗ от 27.07.2006).</p>
+        <p><b style="color:var(--ink);">Хранение:</b> данные хранятся на защищённых серверах и не передаются третьим лицам без согласия, кроме случаев, предусмотренных законодательством РФ.</p>
+        <p><b style="color:var(--ink);">Срок хранения:</b> до отзыва согласия или до достижения целей обработки, но не более 3 лет.</p>
+        <p><b style="color:var(--ink);">Права субъекта:</b> вы вправе в любой момент отозвать согласие, запросить данные или их удаление, направив обращение на <span id="privacy-email">info&nbsp;[at]&nbsp;mir-nd.ru</span> или по телефону <a href="tel:+79031016640" style="color:var(--olive);">+7 903 101-66-40</a>.</p>
+        <p style="margin:0;">Продолжая использовать сайт и отправляя данные через формы, вы подтверждаете своё согласие с настоящей Политикой.</p>
+      </div>
+      <button onclick="document.getElementById('privacy-modal').close()" class="btn" style="margin-top:16px;width:100%;">Понятно, закрыть</button>
+    </div>
+  </dialog>
+
+  <div class="mobile-bar">
+    <a href="tel:+79031016640">Позвонить</a>
+    <a class="wa" href="https://wa.me/79031016640" target="_blank" rel="noreferrer">WhatsApp</a>
+  </div>
+
+  <script>
+    // 1. База сценариев
+    const details = {
+      move: {
+        title: "Переезд Москва → Дмитров",
+        text: "Фиксируем бюджет продажи в Москве и параметры покупки в Дмитрове. Синхронизируем задатки, аккредитивы и даты переезда, чтобы семья не осталась без жилья в переходный период.",
+        cta: "Разобрать переезд"
+      },
+      buy: {
+        title: "Первая покупка и ипотека",
+        text: "Показываем реальный коридор вариантов под ваш комфортный платеж. Проверяем банк, снижаем переплату по навязанным страховкам и торгуемся с продавцом.",
+        cta: "Посчитать маршрут покупки"
+      },
+      certs: {
+        title: "Сертификаты, опека, сложные оплаты",
+        text: "Маткапитал, военный сертификат (ЦЖЗ Росвоенипотеки), переселение, доли несовершеннолетних. Согласовываем пакет с органами опеки без отказов.",
+        cta: "Прислать вводные по документам"
+      },
+      remote: {
+        title: "Удалённая сделка",
+        text: "Если стороны в разных городах: готовим договор, организуем выпуск защищенной ЭЦП и регистрируем переход права через аккредитованные каналы.",
+        cta: "Описать географию сделки"
+      },
+      sell: {
+        title: "Продажа без демпинга",
+        text: "Точная оценка на базе закрытых сделок, предпродажная подготовка, качественная презентация и отсеивание праздных любопытных.",
+        cta: "Запросить аналитическую оценку"
+      },
+      rent: {
+        title: "Найм и коммерция",
+        text: "Сдача квартир и оформление коммерческих площадей. Составление жесткого договора найма с описью имущества и залоговыми обязательствами.",
+        cta: "Оставить заявку на объект"
+      }
+    };
+
+    const detailBox = document.getElementById("detail");
+    const paintScenario = (id) => {
+      const item = details[id];
+      detailBox.innerHTML = `
+        <div>
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        </div>
+        <div>
+          <a class="btn btn-white" href="#ask">${item.cta}</a>
+          <p style="margin: 10px 0 0; font-size: 13px; color: var(--honey);">Или сразу руководителю: <a href="tel:+79031016640" style="text-decoration:underline;">+7 903 101-66-40</a></p>
+        </div>
+      `;
+      document.querySelectorAll(".sit").forEach((btn) => btn.classList.toggle("active", btn.dataset.id === id));
+      const select = document.getElementById("lead-case");
+      const map = {
+        move: "Переезд Москва → Дмитров",
+        buy: "Покупка / ипотека",
+        certs: "Сертификаты и опека",
+        remote: "Удалённая сделка",
+        sell: "Продажа",
+        rent: "Аренда / коммерция"
+      };
+      if (select && map[id]) select.value = map[id];
+    };
+
+    document.getElementById("sits").addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-id]");
+      if (btn) paintScenario(btn.dataset.id);
+    });
+    paintScenario("move");
+
+    // 2. Мобильное меню
+    document.getElementById("menuToggle").addEventListener("click", () => {
+      const navLinks = document.getElementById("navLinks");
+      const isOpen = navLinks.classList.toggle("open");
+      document.getElementById("menuToggle").setAttribute("aria-expanded", String(isOpen));
+    });
+
+    // 3. Форма заявки → FormSubmit.co (AJAX)
+    document.getElementById("lead").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector("button[type=submit]");
+      const toast = document.getElementById("toast");
+      const data = Object.fromEntries(new FormData(form));
+      btn.disabled = true;
+      btn.textContent = "Отправка...";
+      try {
+        const res = await fetch("https://formsubmit.co/ajax/info@mir-nd.ru", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            ...data,
+            _subject: "Новая заявка с сайта Мир Недвижимости",
+            _template: "table"
+          })
+        });
+        if (!res.ok) throw new Error("network");
+        toast.style.display = "block";
+        setTimeout(() => { toast.style.display = "none"; }, 5000);
+        form.reset();
+      } catch {
+        toast.textContent = "Ошибка отправки. Позвоните нам: +7 903 101-66-40";
+        toast.style.display = "block";
+        setTimeout(() => { toast.style.display = "none"; toast.textContent = "Заявка принята! Мы свяжемся с вами в ближайшее рабочее окно."; }, 6000);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Отправить заявку";
+      }
+    });
+
+    // 4. Логика слотов и лимитов
+    const SLOT_CAP = 3;
+    const SLOT_STORE = "mir_nd_slots_data";
+
+    const getMoscowTime = () => {
+      const stamp = new Date().toLocaleString("sv-SE", { timeZone: "Europe/Moscow" });
+      const [date, clock] = stamp.split(" ");
+      const [hour, minute] = clock.split(":").map(Number);
+      const weekday = new Date(`${date}T12:00:00+03:00`).getDay();
+      return { date, minutes: hour * 60 + minute, weekday };
+    };
+
+    const addDays = (iso, days) => {
+      const d = new Date(`${iso}T12:00:00+03:00`);
+      d.setDate(d.getDate() + days);
+      return d.toLocaleDateString("sv-SE", { timeZone: "Europe/Moscow" });
+    };
+
+    const formatWeekday = (iso) =>
+      new Date(`${iso}T12:00:00+03:00`).toLocaleDateString("ru-RU", {
+        weekday: "short",
+        day: "numeric",
+        month: "long",
+        timeZone: "Europe/Moscow"
+      });
+
+    const getNearestSlot = () => {
+      const { date, minutes, weekday } = getMoscowTime();
+      if (weekday === 0 || weekday === 6) {
+        const next = addDays(date, weekday === 0 ? 1 : 2);
+        return { key: `${next}-morning`, label: "10:00–12:00", when: formatWeekday(next), open: false };
+      }
+      if (minutes < 12 * 60) {
+        return {
+          key: `${date}-morning`,
+          label: "10:00–12:00",
+          when: formatWeekday(date),
+          open: minutes >= 10 * 60 && minutes < 12 * 60
+        };
+      }
+      if (minutes < 20 * 60) {
+        return {
+          key: `${date}-evening`,
+          label: "18:00–20:00",
+          when: formatWeekday(date),
+          open: minutes >= 18 * 60
+        };
+      }
+      let next = addDays(date, 1);
+      const nextDay = new Date(`${next}T12:00:00+03:00`).getDay();
+      if (nextDay === 6) next = addDays(date, 3);
+      if (nextDay === 0) next = addDays(date, 2);
+      return { key: `${next}-morning`, label: "10:00–12:00", when: formatWeekday(next), open: false };
+    };
+
+    const getCounts = () => {
+      try { return JSON.parse(localStorage.getItem(SLOT_STORE) || "{}"); } catch { return {}; }
+    };
+
+    const renderSlots = (msg) => {
+      const slot = getNearestSlot();
+      const taken = Number(getCounts()[slot.key] || 0);
+      const isFull = taken >= SLOT_CAP;
+      const left = Math.max(SLOT_CAP - taken, 0);
+
+      const card = document.getElementById("reply-card");
+      const btn = document.getElementById("slot-btn");
+      card.classList.toggle("is-full", isFull);
+
+      document.getElementById("slot-time").textContent = slot.label;
+      document.getElementById("reply-status").textContent = slot.open
+        ? "Окно открыто · Ирина отвечает лично"
+        : "Сейчас вне окна ответов · оставьте запись на ближайшее время";
+      document.getElementById("slot-meta").textContent = isFull
+        ? `${slot.when} · Мест нет (лимит 3 консультации исчерпан)`
+        : `${slot.when} · Доступно мест: ${left} из ${SLOT_CAP}`;
+      document.getElementById("slot-note").textContent = msg || (isFull
+        ? "Окно заполнено. Напишите напрямую в WhatsApp — ответим при первой возможности."
+        : "Ограничение в 3 записи помогает детально изучить каждый документ без спешки.");
+
+      btn.disabled = isFull;
+      document.querySelectorAll("#slot-form input").forEach(input => { input.disabled = isFull; });
+
+      const heroTime = document.getElementById("hero-slot-time");
+      const heroMeta = document.getElementById("hero-slot-meta");
+      const heroGo = document.getElementById("hero-slot-go");
+      if (heroTime && heroMeta && heroGo) {
+        heroTime.textContent = slot.label;
+        heroMeta.textContent = isFull ? `${slot.when} · Мест нет` : `${slot.when} · Мест: ${left}`;
+        heroGo.textContent = isFull ? "Окно заполнено · написать" : "Записаться на консультацию";
+      }
+    };
+
+    document.getElementById("slot-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const slot = getNearestSlot();
+      const counts = getCounts();
+      const taken = Number(counts[slot.key] || 0);
+      if (taken >= SLOT_CAP) return;
+      const data = Object.fromEntries(new FormData(e.target));
+      // Отправить запись на email (fire-and-forget; не блокируем UX)
+      fetch("https://formsubmit.co/ajax/info@mir-nd.ru", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          ...data,
+          _subject: `Запись на консультацию: ${slot.label} ${slot.when}`,
+          Слот: `${slot.label} ${slot.when}`,
+          _template: "table"
+        })
+      }).catch(() => {});
+      // Обновить локальный счётчик и UI
+      counts[slot.key] = taken + 1;
+      localStorage.setItem(SLOT_STORE, JSON.stringify(counts));
+      e.target.reset();
+      renderSlots("Вы успешно записаны! Мы свяжемся с вами в указанный интервал.");
+    });
+
+    renderSlots();
+  </script>
+</body>
+</html>
