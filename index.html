@@ -2,470 +2,1890 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#583820">
-<title>Мир недвижимости — макет главной</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4a5a46">
+<meta name="description" content="Бутик-агентство Ирины Скляровой: переезд Москва — Дмитров, ипотека с сертификатами, опека, удалённые сделки.">
+<title>Мир Недвижимости Дмитров — спокойная сделка</title>
+<link rel="icon" href="assets/brand/mark.png">
 <style>
-  :root {
-    --paper: #ffffff;
-    --ink: #583820;
-    --muted: #7d5e48;
-    --line: #ebe7e4;
-    --lime: #88bd2f;
-    --lime-deep: #76a828;
-    --lime-ink: #587b1f;
-    --sans: "Manrope", "Segoe UI", sans-serif;
-    --r: 4px;
-  }
+/* Lora and Nunito Sans, SIL Open Font License. See assets/fonts/OFL.txt */
+@font-face {
+  font-family: "Lora";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/lora-italic-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
 
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
-  body {
-    margin: 0;
-    color: var(--ink);
-    background: var(--paper);
-    font-family: var(--sans);
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 1.45;
-  }
-  a { color: inherit; }
-  img { max-width: 100%; display: block; }
-  button, input, textarea { font: inherit; color: inherit; }
-  .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+@font-face {
+  font-family: "Lora";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/lora-italic-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
 
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: var(--paper);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    min-height: 76px;
-  }
-  .brand { display: flex; align-items: center; margin-right: auto; text-decoration: none; }
-  .brand img { height: 44px; width: auto; }
-  .nav-links { display: flex; align-items: center; gap: 22px; }
-  .nav-links a {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-  }
-  .nav-links a:hover, .phone:hover, .foot-links a:hover { color: var(--lime-ink); }
-  .phone {
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 15px;
-    letter-spacing: -.02em;
-    white-space: nowrap;
-  }
-  .menu { display: none; }
+@font-face {
+  font-family: "Lora";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/lora-italic-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
-  .hero { padding: 72px 0 64px; }
-  .kicker {
-    margin: 0 0 16px;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  h1 {
-    margin: 0;
-    max-width: 11em;
-    font-size: clamp(40px, 5.4vw, 72px);
-    font-weight: 800;
-    letter-spacing: -.045em;
-    line-height: .94;
-  }
-  .lead {
-    max-width: 36em;
-    margin: 24px 0 0;
-    font-size: 20px;
-    line-height: 1.4;
-  }
-  .actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 18px 28px;
-    margin-top: 32px;
-  }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 52px;
-    padding: 0 22px;
-    border: 0;
-    border-radius: var(--r);
-    background: var(--lime);
-    color: var(--ink);
-    text-decoration: none;
-    font-weight: 800;
-    letter-spacing: .01em;
-    cursor: pointer;
-  }
-  .btn:hover { background: var(--lime-deep); }
-  .since {
-    margin: 28px 0 0;
-    color: var(--muted);
-    font-size: 15px;
-  }
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  src: url("assets/fonts/lora-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
 
-  .team, .services, .proof { padding: 24px 0 88px; }
-  h2 {
-    margin: 0 0 32px;
-    font-size: clamp(32px, 4vw, 56px);
-    font-weight: 800;
-    letter-spacing: -.045em;
-    line-height: .96;
-  }
-  .crew {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .person strong { display: block; margin-top: 14px; font-size: 22px; letter-spacing: -.03em; }
-  .person span { display: block; margin-top: 4px; color: var(--muted); font-size: 15px; }
-  .person img {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    border-radius: var(--r);
-    background: var(--line);
-  }
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  src: url("assets/fonts/lora-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
 
-  .rows { border-top: 1px solid var(--ink); }
-  .row {
-    display: grid;
-    grid-template-columns: 64px 1fr 1.3fr;
-    gap: 24px;
-    align-items: baseline;
-    padding: 22px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .num { font-size: 22px; font-weight: 800; color: var(--lime-ink); letter-spacing: -.04em; }
-  .row b { font-size: 22px; letter-spacing: -.03em; }
-  .row p { margin: 0; color: var(--muted); }
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  src: url("assets/fonts/lora-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
-  .facts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid var(--ink);
-  }
-  .fact { padding: 28px 24px 0 0; }
-  .fact b {
-    display: block;
-    font-size: clamp(36px, 4vw, 52px);
-    font-weight: 800;
-    letter-spacing: -.045em;
-    line-height: 1;
-  }
-  .fact span { display: block; margin-top: 10px; max-width: 16em; color: var(--muted); }
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("assets/fonts/nunito-sans-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
 
-  .ask {
-    background: var(--ink);
-    color: #f7f4f0;
-    padding: 72px 0 80px;
-  }
-  .ask .kicker { color: var(--lime); }
-  .ask-grid {
-    display: grid;
-    grid-template-columns: .9fr 1.1fr;
-    gap: 48px;
-    align-items: start;
-  }
-  .ask p { margin: 0 0 10px; }
-  .ask a { color: var(--lime); text-decoration: none; }
-  .ask a:hover { color: #fff; }
-  .contacts { margin-top: 28px; }
-  form { display: grid; gap: 4px; }
-  input, textarea {
-    width: 100%;
-    border: 0;
-    border-bottom: 1px solid rgba(247, 244, 240, .35);
-    border-radius: 0;
-    background: transparent;
-    color: #f7f4f0;
-    padding: 14px 0;
-    outline: none;
-  }
-  input::placeholder, textarea::placeholder { color: rgba(247, 244, 240, .62); }
-  textarea { resize: vertical; min-height: 88px; }
-  input:focus, textarea:focus { border-bottom-color: var(--lime); }
-  .consent {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    margin-top: 12px;
-    font-size: 13px;
-    color: rgba(247, 244, 240, .75);
-  }
-  .consent input { width: auto; margin-top: 3px; accent-color: var(--lime); }
-  .ask .btn { justify-self: start; margin-top: 16px; }
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("assets/fonts/nunito-sans-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
 
-  footer { padding: 36px 0 40px; color: var(--muted); font-size: 14px; }
-  .foot {
-    display: flex;
-    justify-content: space-between;
-    gap: 32px;
-    flex-wrap: wrap;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--line);
-  }
-  .foot img { height: 36px; width: auto; margin-bottom: 12px; }
-  .foot b { color: var(--ink); }
-  .foot-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 22px;
-    padding-top: 18px;
-  }
-  .foot-links a { color: var(--ink); text-decoration: none; font-weight: 700; font-size: 14px; }
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("assets/fonts/nunito-sans-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
-  .mobile-bar { display: none; }
+:root {
+      --bg: #f4eadc;
+      --bg-2: #efe1cf;
+      --paper: #fff8ef;
+      --ink: #2a241e;
+      --muted: #7a6e62;
+      --line: #ead9c4;
+      --olive: #4a5a46;
+      --olive-deep: #3a4738;
+      --honey: #e8c9a4;
+      --clay: #c4785a;
+      --blush: #f0d9c8;
+      --serif: "Lora", Georgia, serif;
+      --sans: "Nunito Sans", "Segoe UI", sans-serif;
+      --r: 28px;
+      --r-sm: 18px;
+    }
 
-  @media (max-width: 860px) {
-    .wrap { width: min(1120px, calc(100% - 28px)); }
-    .nav-links, .nav > .phone { display: none; }
-    .menu { display: block; position: relative; }
-    .menu summary {
-      list-style: none;
+    /* Visually hidden — accessible labels for screen readers */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.55;
+      background:
+        radial-gradient(900px 520px at 8% -10%, #f8e6d2 0%, transparent 62%),
+        radial-gradient(700px 480px at 100% 12%, #ead7c4 0%, transparent 55%),
+        var(--bg);
+    }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      padding: 22px 0 10px;
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 var(--line);
+    }
+    .nav {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+    .brand-logo {
       width: 44px;
       height: 44px;
-      border: 1.5px solid var(--ink);
-      border-radius: var(--r);
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-    .menu summary::-webkit-details-marker { display: none; }
-    .menu[open] summary { background: var(--ink); color: var(--paper); }
-    .menu-panel {
-      position: absolute;
-      right: 0;
-      top: calc(100% + 10px);
-      min-width: 240px;
-      padding: 8px 0;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--r);
-    }
-    .menu-panel a {
+      object-fit: contain;
+      background: transparent;
+      border-radius: 8px;
       display: block;
-      padding: 12px 16px;
+      flex-shrink: 0;
+    }
+    .brand-wordmark {
+      display: block;
+      width: min(220px, 100%);
+      height: auto;
+      margin: 0 0 12px;
+    }
+    .brand b { display: block; font-size: 16px; line-height: 1.2; white-space: nowrap; }
+    .brand small {
+      display: block;
+      color: var(--muted);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .nav-links {
+      margin-left: auto;
+      display: flex;
+      gap: 14px;
+      font-size: 15px;
+      align-items: center;
+    }
+    .nav-links a {
       text-decoration: none;
+      white-space: nowrap;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--clay); }
+    .page-nav {
+      min-width: 0;
+      max-width: 100%;
+      padding: 2px 0 8px;
+    }
+    .page-nav-links {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 6px 18px;
+      align-items: center;
+      max-width: 100%;
+      min-width: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      overscroll-behavior-x: contain;
+      scrollbar-width: none;
+      font-size: 13px;
       font-weight: 700;
     }
-    .hero { padding: 40px 0 48px; }
-    h1 { max-width: none; }
-    .crew, .ask-grid, .row, .facts { grid-template-columns: 1fr; }
-    .row { gap: 6px; }
-    .fact { padding: 22px 0 0; border-top: 1px solid var(--line); }
-    .facts { border-top: 0; }
-    .fact:first-child { border-top: 0; }
-    .team, .services, .proof { padding-bottom: 56px; }
-    .mobile-bar {
+    .page-nav-links::-webkit-scrollbar { display: none; }
+    .page-nav-links a {
+      flex: none;
+      text-decoration: none;
+      white-space: nowrap;
+      color: var(--olive-deep);
+      padding: 4px 0;
+    }
+    .page-nav-links a:hover { color: var(--clay); }
+    .phone { font-weight: 800; }
+    .menu-btn {
+      display: none;
+      background: none;
+      border: 0;
+      width: 44px;
+      height: 44px;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .hero { padding: 36px 0 28px; }
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(38px, 5.5vw, 72px);
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      margin: 0 0 10px;
+      max-width: 14ch;
+    }
+    .hero .tagline {
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.4vw, 28px);
+      font-style: italic;
+      font-weight: 500;
+      line-height: 1.3;
+      margin: 0 0 16px;
+      color: var(--olive-deep);
+    }
+    .kicker {
+      margin: 0 0 10px;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--clay);
+      font-weight: 700;
+    }
+    .lead {
+      font-size: 17px;
+      max-width: 48ch;
+      margin: 0 0 26px;
+      color: #4d453d;
+    }
+    .hero-row {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+    .pills { display: flex; gap: 10px; flex-wrap: wrap; }
+    .pill {
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--olive);
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .2s;
+    }
+    .pill:hover { opacity: .9; transform: translateY(-1px); }
+    .pill.solid {
+      background: var(--olive);
+      color: #fff8ef;
+      border-color: var(--olive);
+    }
+    .hero-aside {
+      width: 100%;
+      max-width: 380px;
+      justify-self: end;
       display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 100%;
+    }
+    .hero-note {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      background: var(--olive);
+      color: #f7efe4;
+      border-radius: 36px 36px 36px 14px;
+      padding: 26px 24px 22px;
+    }
+    .hero-note .num {
+      font-family: var(--serif);
+      font-size: 46px;
+      line-height: 1;
+      color: var(--honey);
+      margin: 0 0 8px;
+    }
+    .hero-note p { margin: 0; font-size: 14px; line-height: 1.45; }
+    .hero-note-more {
+      padding-top: 14px;
+      border-top: 1px solid rgba(232, 201, 164, .35);
+      color: var(--honey);
+      font-size: 13px !important;
+    }
+    .hero-slot {
+      display: block;
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: var(--paper);
+      color: var(--ink);
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(30, 24, 16, .08);
+      border: 1px solid var(--line);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .hero-slot:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(30, 24, 16, .14);
+    }
+    .hero-slot .kicker { margin: 0 0 4px; font-size: 11px; }
+    .hero-slot-time {
+      font-family: var(--serif);
+      font-size: 24px;
+      line-height: 1.1;
+      margin: 0 0 4px;
+      color: var(--olive-deep);
+    }
+    .hero-slot-meta {
+      margin: 0 0 8px;
+      font-size: 13px;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+    .hero-slot-go {
+      display: inline-flex;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--olive-deep);
+    }
+    .hero-slot-go::after { content: " →"; }
+    .hero-slot.is-full { opacity: .72; filter: grayscale(.3); }
+    .hero-slot.is-full .hero-slot-go { color: var(--muted); }
+
+    .section { padding: 36px 0; }
+    .section-head { max-width: 38rem; margin-bottom: 30px; }
+    .section-head h2, h2 {
+      font-family: var(--serif);
+      font-size: clamp(26px, 3vw, 34px);
+      line-height: 1.25;
+      font-weight: 600;
+      margin: 0 0 10px;
+    }
+    .section-lead { margin: 0; color: var(--muted); font-size: 16px; }
+
+    /* Блок руководителя */
+    .letter-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .letter-grid > .portrait,
+    .person > .portrait {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #6a7a64, var(--olive-deep));
+      color: var(--honey);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .letter-grid > .portrait:has(img),
+    .person > .portrait:has(img) { padding: 0; }
+    .initials { font-family: var(--serif); font-size: 64px; line-height: 1; }
+    .letter-grid > .portrait small,
+    .person > .portrait small { display: block; margin-top: 6px; font-size: 13px; color: #f0e2cf; }
+    blockquote {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.2vw, 26px);
+      line-height: 1.4;
+      font-weight: 500;
+      color: var(--olive-deep);
+    }
+    .proof { margin-top: 36px; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .stats div {
+      background: var(--paper);
+      border-radius: 20px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+    }
+    .stats b {
+      display: block;
+      font-family: var(--serif);
+      font-size: 32px;
+      line-height: 1;
+      color: var(--olive-deep);
+      margin-bottom: 6px;
+    }
+    .awards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .awards span {
+      background: var(--olive);
+      color: var(--honey);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+    .crew .kicker { margin-bottom: 12px; }
+    .crew-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .crew-list article {
+      display: block;
+      background: var(--paper);
+      border-radius: 24px;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    .crew-list article a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .crew-list article div { padding: 14px 16px 18px; }
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--olive);
+      color: var(--honey);
+      display: grid;
+      place-items: center;
+      font-family: var(--serif);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .crew-list b { display: block; font-family: var(--serif); font-size: 20px; font-weight: 600; }
+    .crew-list p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+
+    /* Ситуации */
+    .sit-list { display: grid; gap: 8px; }
+    .sit {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      width: 100%;
+      text-align: left;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 14px 18px;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .sit:hover { border-color: var(--clay); }
+    .sit.active {
+      border-color: var(--olive);
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(74, 58, 40, .06);
+    }
+    .dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--blush);
+      color: var(--olive-deep);
+      font-weight: 800;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    .sit.active .dot { background: var(--olive); color: var(--honey); }
+    .sit .ttl {
+      margin: 0 0 2px;
+      font-size: 17px;
+      font-family: var(--serif);
+      font-weight: 600;
+      display: block;
+    }
+    .sit p { margin: 0; color: var(--muted); font-size: 14px; }
+    .detail {
+      margin-top: 14px;
+      background: var(--olive-deep);
+      color: #f7efe4;
+      border-radius: 28px;
+      padding: 24px 26px;
+      display: grid;
+      grid-template-columns: 1.5fr .8fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .detail > div:last-child {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .detail h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      margin: 0 0 8px;
+      color: var(--honey);
+    }
+    .detail p { margin: 0; font-size: 15px; line-height: 1.5; }
+
+    /* Доска vs Агентство */
+    .honest-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .col { padding: 28px; }
+    .col.a {
+      background: var(--blush);
+      border-radius: 28px 28px 10px 28px;
+    }
+    .col.b {
+      background: var(--olive);
+      color: #f7efe4;
+      border-radius: 28px 28px 28px 10px;
+    }
+    .col h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      margin: 0 0 10px;
+      font-weight: 600;
+    }
+    .col p { margin: 0 0 8px; font-size: 15px; }
+
+    /* Шаги */
+    .step-list { display: grid; gap: 8px; }
+    .step {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 8px 14px;
+      background: var(--paper);
+      border-radius: var(--r-sm);
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+    }
+    .step .n {
+      font-family: var(--serif);
+      font-size: 26px;
+      color: var(--clay);
+      line-height: 1;
+    }
+    .step b { display: block; margin-bottom: 2px; font-size: 16px; }
+    .step p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    /* Дмитров */
+    .place {
+      background: var(--paper); /* fallback для старых браузеров */
+      background: color-mix(in srgb, var(--paper) 85%, transparent);
+      border-radius: 36px;
+      padding: 36px;
+      border: 1px solid var(--line);
+    }
+    .place-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+    .place-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .place-points article, .place-extra article {
+      background: var(--paper);
+      border-radius: 20px;
+      padding: 18px;
+      border: 1px solid var(--line);
+    }
+    .place-points b, .place-extra b {
+      display: block;
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .place-points p, .place-extra p { margin: 0; font-size: 13.5px; color: var(--muted); }
+    .place-extra {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .place-source {
+      margin: 14px 0 0;
+      font-size: 11.5px;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .stat { display: flex; flex-wrap: wrap; gap: 8px; }
+    .stat div {
+      flex: 1 1 120px;
+      background: var(--paper);
+      border-radius: 999px;
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+    .stat b { display: block; font-family: var(--serif); font-size: 18px; color: var(--olive-deep); }
+
+    /* FAQ */
+    .faq details {
+      background: var(--paper);
+      border-radius: 18px;
+      padding: 6px 18px;
+      margin-bottom: 8px;
+      border: 1px solid var(--line);
+    }
+    summary { cursor: pointer; font-weight: 700; padding: 10px 0; font-size: 15px; }
+    details p { color: var(--muted); margin: 0 0 12px; font-size: 14px; }
+
+    /* Слоты и формы */
+    .reply {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 28px;
+      align-items: stretch;
+      background: var(--paper);
+      border-radius: 36px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      transition: opacity .25s ease, filter .25s ease;
+    }
+    .reply.is-full {
+      opacity: .65;
+      filter: grayscale(.4);
+      background: #efe8dc;
+    }
+    .reply-status { font-weight: 800; color: var(--olive-deep); margin: 0 0 12px; font-size: 14px; }
+    .slot {
+      background: var(--bg);
+      border-radius: 24px;
+      padding: 22px;
+      border: 1px solid var(--line);
+    }
+    .slot-time {
+      font-family: var(--serif);
+      font-size: clamp(26px, 2.5vw, 32px);
+      margin: 0 0 4px;
+      line-height: 1.1;
+      color: var(--olive-deep);
+    }
+    .slot-meta { margin: 0 0 14px; color: var(--muted); font-size: 13px; }
+    .slot-form { display: grid; gap: 8px; margin-bottom: 12px; }
+    .slot-form input, .form input, .form select, .form textarea {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: var(--paper);
+      width: 100%;
+    }
+    .slot-form .btn:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+      filter: grayscale(.4);
+    }
+    .slot-note { margin: 0 0 12px; font-size: 13px; color: var(--muted); }
+
+    .ask {
+      background: var(--olive-deep);
+      color: #f7efe4;
+      border-radius: 36px;
+      padding: 36px;
+    }
+    .ask-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .ask h2 { color: #f7efe4; }
+    .ask .kicker { color: var(--honey); }
+    .form { display: grid; gap: 10px; }
+    .btn {
+      background: var(--honey);
+      color: var(--olive-deep);
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 20px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      transition: all .2s;
+    }
+    .btn:hover { opacity: .9; transform: translateY(-1px); }
+    .btn-white { background: #fff; color: var(--olive-deep); }
+    .legal-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .legal-check input { width: auto; margin-top: 2px; }
+    .ask .legal-check { color: #d0c4b4; }
+
+    .toast {
+      display: none;
+      padding: 12px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid var(--honey);
+      border-radius: 12px;
+      font-size: 13px;
+      color: var(--honey);
+      text-align: center;
+    }
+
+    footer {
+      padding: 32px 0 calc(88px + env(safe-area-inset-bottom, 0px));
+      font-size: 12.5px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      margin-top: 40px;
+    }
+    .foot {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 20px;
+    }
+    .mobile-bar {
+      display: none;
       position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 30;
+      bottom: 12px;
+      bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+      left: 12px;
+      right: 12px;
+      gap: 8px;
+      z-index: 50;
+      padding-left: env(safe-area-inset-left, 0px);
+      padding-right: env(safe-area-inset-right, 0px);
     }
     .mobile-bar a {
-      flex: 1;
+      flex: 1 1 0;
+      min-width: 0;
+      height: 44px;
+      max-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       text-decoration: none;
-      font-weight: 800;
-      padding: 16px 8px;
+      padding: 0 12px;
+      white-space: nowrap;
+      border-radius: 999px;
+      background: var(--olive);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 1.2;
+      box-shadow: 0 4px 14px rgba(0,0,0,.15);
     }
-    .mobile-bar a.call { background: var(--ink); color: #f7f4f0; }
-    .mobile-bar a.wa { background: var(--lime); color: var(--ink); }
-    body { padding-bottom: 54px; }
-    footer { padding-bottom: 28px; }
-  }
+    .mobile-bar a.wa { background: #2e7d32; }
+
+    /* ── Touch-состояния (feedback на тап для мобильных устройств) ── */
+    .btn:active { opacity: .8; transform: translateY(0) scale(0.98); }
+    .pill:active { opacity: .8; transform: translateY(0); }
+    .sit:active { border-color: var(--olive); background: #fff; }
+    .hero-slot:active { transform: translateY(0); }
+
+    /* touch-action: убирает 300ms задержку на мобильных */
+    .btn, .pill, .sit, .hero-slot, summary, .mobile-bar a, .nav-links a {
+      touch-action: manipulation;
+    }
+
+    /* ── Меню сворачивается раньше, чем название в шапке начинает переноситься ── */
+    @media (max-width: 1100px) {
+      header .nav-links { display: none; }
+      header .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(100% + 8px);
+        background: var(--paper);
+        border-radius: 20px;
+        padding: 8px 12px;
+        box-shadow: 0 12px 40px rgba(0,0,0,.12);
+        border: 1px solid var(--line);
+        z-index: 100;
+      }
+      header .nav-links.open a { padding: 12px 8px; display: block; }
+      .menu-btn { display: block; margin-left: auto; }
+    }
+
+    /* ── Мобильная версия (≤ 860px) ── */
+    @media (max-width: 860px) {
+      html {
+        height: 100%;
+        overflow: hidden;
+      }
+      body {
+        height: 100dvh;
+        max-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        overscroll-behavior: none;
+        padding-bottom: 0;
+      }
+      header { flex: 0 0 auto; padding: 14px 0 8px; }
+      .page-scroll {
+        flex: 1 1 0;
+        min-height: 0;
+        overflow: auto;
+        overscroll-behavior: contain;
+      }
+      footer { padding-bottom: 32px; }
+      .mobile-bar {
+        position: static;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        flex: 0 0 auto;
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: auto;
+        height: auto;
+        min-height: 0;
+        max-height: calc(60px + min(34px, env(safe-area-inset-bottom, 0px)));
+        margin: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding: 8px max(12px, env(safe-area-inset-right, 0px)) calc(8px + min(34px, env(safe-area-inset-bottom, 0px))) max(12px, env(safe-area-inset-left, 0px));
+      }
+      .hero-row, .honest-grid, .letter-grid, .place-grid, .place-points, .place-extra, .ask-grid, .foot, .detail, .stats, .crew-list, .reply {
+        grid-template-columns: 1fr;
+      }
+      .hero-aside, .letter-grid > .portrait, .person > .portrait { width: 100%; max-width: none; }
+      .letter-grid > .portrait, .person > .portrait { height: 180px; }
+      .letter-grid > .portrait:has(img),
+      .person > .portrait:has(img) { width: 180px; height: 180px; margin-inline: auto; }
+      .place, .ask, .reply { padding: 22px; border-radius: 24px; }
+      /* iOS Safari: font-size >= 16px предотвращает авто-зум при фокусе на инпуте */
+      .slot-form input, .form input, .form select, .form textarea { font-size: 16px; }
+    }
+
+    /* ── iPad / планшет широкий (861px–1024px): «слепая зона» десктопной сетки ── */
+    @media (min-width: 861px) and (max-width: 1024px) {
+      .hero-row { grid-template-columns: 1fr; }
+      .hero-aside { max-width: 100%; justify-self: stretch; }
+      .crew-list { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+      .letter-grid { grid-template-columns: 180px 1fr; }
+      .place-grid { grid-template-columns: 1fr; }
+      .ask-grid { grid-template-columns: 1fr; }
+      .reply { grid-template-columns: 1fr; }
+    }
+
+    /* ── Планшетный breakpoint (600px–860px): восстанавливаем многоколоночность ── */
+    @media (min-width: 600px) and (max-width: 860px) {
+      .stats { grid-template-columns: repeat(3, 1fr); }
+      .crew-list { grid-template-columns: repeat(3, 1fr); }
+      .honest-grid { grid-template-columns: 1fr 1fr; }
+      .place-extra { grid-template-columns: 1fr 1fr; }
+      .place-points { grid-template-columns: repeat(2, 1fr); }
+      .foot { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── Печать: убираем фоны, скрываем лишнее ── */
+    @media print {
+      .mobile-bar, .menu-btn, .pills { display: none !important; }
+      body { height: auto !important; overflow: visible !important; display: block !important; }
+      .page-scroll { overflow: visible !important; height: auto !important; }
+      header .nav-links,
+      header .nav-links.open {
+        display: flex !important;
+        position: static !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: 0 !important;
+        padding: 0 !important;
+      }
+      header { padding: 10px 0; }
+      body { padding-bottom: 0 !important; }
+      body { background: #fff !important; color: #000 !important; font-size: 12pt; }
+      .hero-note { background: #e8e8e8 !important; color: #000 !important; }
+      .hero-note .num { color: #333 !important; }
+      .col.b, .ask, .detail, .awards span { background: #e8e8e8 !important; color: #000 !important; border-radius: 8px; }
+      .awards span { border: 1px solid #ccc; }
+      .section { padding: 20px 0; }
+      h1, h2, h3 { color: #000 !important; }
+      blockquote { color: #222 !important; }
+      .slot, .reply { display: none !important; }
+      a[href^="tel"]::after { content: " (" attr(href) ")"; font-size: 10pt; }
+      footer { padding: 16px 0 !important; }
+    }
+
+.home .section,
+.home .hero { scroll-margin-top: 128px; }
+@media (max-width: 860px) {
+  .home .section,
+  .home .hero { scroll-margin-top: 0; }
+}
+
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  background: var(--olive);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  z-index: 80;
+}
+.skip:focus { top: 12px; }
+
+.hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-banner {
+  margin: 12px auto 0;
+  background: var(--paper);
+  border: 1px solid var(--honey);
+  border-radius: 16px;
+  padding: 12px 16px;
+  font-weight: 700;
+}
+
+.about-home { margin: 18px 0 8px; max-width: 62ch; }
+.text-link { color: var(--olive-deep); font-weight: 800; }
+.section-more { margin: 16px 0 0; }
+.detail-phone { margin: 0; font-size: 13px; color: var(--honey); }
+.detail-phone a { text-decoration: underline; }
+
+.page-hero { margin-bottom: 22px; }
+.page-hero h1,
+.prose h1,
+.single-wrap h1 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.12;
+  margin: 0 0 12px;
+}
+.years-line {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2vw, 26px);
+  color: var(--olive-deep);
+  margin: 0 0 16px;
+}
+.prose { max-width: 72ch; }
+.prose p { margin: 0 0 12px; }
+.section.tight { padding-bottom: 0; }
+
+.advantage-list,
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.card-grid { grid-template-columns: repeat(3, 1fr); }
+.advantage {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 18px 20px;
+}
+.advantage b {
+  display: block;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.advantage p { margin: 0; color: var(--muted); }
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+}
+.card-link { display: block; color: inherit; text-decoration: none; height: 100%; }
+.card-body { display: block; padding: 16px 18px 18px; }
+.card h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+.card p { margin: 0 0 8px; color: #4d453d; }
+.card .meta, .meta { color: var(--muted); font-size: 13px; }
+.badge {
+  display: inline-block;
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--clay);
+}
+.card-cover { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 0; display: block; background: var(--blush); }
+.card-cover.award { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 0; }
+.card-cover.headshot, .person-photo, .crew-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 0;
+  display: block;
+}
+.card-fallback, .award-fallback {
+  display: grid;
+  place-items: center;
+  min-height: 160px;
+  padding: 18px;
+  background: var(--olive);
+  color: var(--honey);
+  font-family: var(--serif);
+  font-size: 22px;
+  text-align: center;
+}
+.review-card blockquote {
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+.avatar-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.crew-fallback {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 0;
+  font-size: 48px;
+}
+.letter-grid > .portrait,
+.person > .portrait { overflow: hidden; }
+.letter-grid > .portrait img,
+.person > .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center center; border-radius: 50%; display: block; }
+.about-team { margin-top: 28px; }
+
+.empty {
+  margin: 0;
+  background: var(--paper);
+  border: 1px dashed var(--line);
+  border-radius: 24px;
+  padding: 22px 24px;
+  color: var(--muted);
+}
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+.filter {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.filter.active { background: var(--olive); color: var(--honey); border-color: var(--olive); }
+
+.service-item {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 20px 22px;
+  margin: 0 0 12px;
+}
+.service-item h2 { margin-bottom: 8px; }
+.service-item .muted { color: var(--muted); }
+.service-item .btn { margin-top: 8px; }
+
+.person {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+.person-photo { width: 100%; height: auto; border-radius: 28px; display: block; }
+.single-cover { width: 100%; border-radius: 24px; margin: 0 0 16px; }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+.gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 16px; display: block; }
+.video-facade {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--olive-deep);
+}
+.video-facade .card-cover, .video-facade .card-fallback { aspect-ratio: 16 / 9; border-radius: 0; }
+.video-play {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  background: var(--honey);
+  color: var(--olive-deep);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 800;
+  font-size: 14px;
+}
+.video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 24px;
+  background: #1c1916;
+  margin: 0 0 16px;
+}
+
+.contacts p { margin: 0 0 8px; }
+.ask-lead { margin: 0 0 18px; }
+.toast:not([hidden]) { display: block; }
+.ask .toast { color: var(--honey); }
+
+.socials { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+.social {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+.policy { color: var(--muted); font-size: 11px; }
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.foot-links a { color: var(--muted); text-decoration: none; font-size: 13px; }
+.pager { margin-top: 22px; }
+.pager .nav-links,
+.pager .nav-links.open {
+  display: flex;
+  position: static;
+  margin: 0;
+  gap: 10px;
+  flex-direction: row;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  padding: 0;
+  font-weight: 700;
+}
+.pager a { text-decoration: none; }
+
+:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+
+@media (max-width: 860px) {
+  .card-grid, .advantage-list, .gallery, .person { grid-template-columns: 1fr; }
+  .letter-grid > .portrait:has(img),
+  .person > .portrait:has(img) { width: 180px; height: 180px; margin-inline: auto; }
+  .letter-grid > .portrait img,
+  .person > .portrait img { height: 100%; }
+}
+@media (min-width: 600px) and (max-width: 860px) {
+  .card-grid, .advantage-list { grid-template-columns: 1fr 1fr; }
+  .gallery { grid-template-columns: 1fr 1fr; }
+}
+
 </style>
 </head>
-<body>
+<body class="home">
+<a class="skip" href="#content">К содержанию</a>
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top">
-      <img src="wp-content/themes/mir-nd/assets/brand/wordmark.png" alt="Мир недвижимости">
+      <img class="brand-logo" src="assets/brand/mark.png" alt="">
+      <span><b>Мир Недвижимости</b><small>Дмитров · ТД «Юбилейный»</small></span>
     </a>
-    <nav class="nav-links" aria-label="Разделы">
-      <a href="#">О компании</a>
-      <a href="#services">Услуги</a>
-      <a href="#team">Команда</a>
-      <a href="#">Объекты</a>
-      <a href="#">Истории</a>
-      <a href="#ask">Контакты</a>
+    <button class="menu-btn" type="button" aria-label="Меню" id="menuToggle" aria-expanded="false" aria-controls="navLinks">☰</button>
+    <nav class="nav-links" id="navLinks" aria-label="Разделы">
+      <a href="#irina">О компании</a><a href="#situations">Услуги</a><a href="#team">Команда</a><a href="#advantages">Преимущества</a><a href="#ask">Контакты</a><a class="phone" href="tel:+79031016640">+7 903 101-66-40</a>
     </nav>
-    <a class="phone" href="tel:+79031016640">+7 903 101-66-40</a>
-    <details class="menu">
-      <summary>Меню</summary>
-      <div class="menu-panel">
-        <a href="#">О компании</a>
-        <a href="#services">Услуги</a>
-        <a href="#team">Команда</a>
-        <a href="#">Объекты</a>
-        <a href="#">Истории</a>
-        <a href="#ask">Контакты</a>
-        <a href="tel:+79031016640">+7 903 101-66-40</a>
-      </div>
-    </details>
   </div>
+  <nav class="page-nav" aria-label="Блоки на странице">
+    <div class="wrap page-nav-links">
+      <a href="#advantages">Преимущества</a>
+      <a href="#how">Как проходит работа</a>
+      <a href="#dmitrov">Дмитров</a>
+      <a href="#awards">Грамоты</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#ask">Контакты</a>
+    </div>
+  </nav>
 </header>
+<div class="page-scroll">
+<main id="content">
 
-<main id="top">
-  <section class="hero">
-    <div class="wrap">
-      <p class="kicker">Дмитров · ТД «Юбилейный»</p>
-      <h1>Сделку можно провести спокойно.</h1>
-      <p class="lead">Три постоянных специалиста доводят сложные сделки до Росреестра. Опека, сертификаты, переезд «Москва — Дмитров» — лично и удалённо.</p>
-      <div class="actions">
-        <a class="btn" href="#ask">Описать задачу</a>
-        <a class="phone" href="tel:+79031016640">+7 903 101-66-40</a>
-      </div>
-      <p class="since">Агентство в Дмитрове с 2018 года</p>
-    </div>
-  </section>
-
-  <section class="team" id="team">
-    <div class="wrap">
-      <p class="kicker">Три человека</p>
-      <h2>Кто ведёт сделку.</h2>
-      <div class="crew">
-        <article class="person">
-          <img src="wp-content/themes/mir-nd/assets/team/irina.jpg" alt="Ирина Склярова" style="object-position:center 38%">
-          <strong>Ирина Склярова</strong>
-          <span>Руководитель, брокер. Опека, сертификаты, переезд.</span>
-        </article>
-        <article class="person">
-          <img src="wp-content/themes/mir-nd/assets/team/ksenia.jpg" alt="Ксения Афанасьева" style="object-position:center 48%">
-          <strong>Ксения Афанасьева</strong>
-          <span>Эксперт. Налоги в сделках.</span>
-        </article>
-        <article class="person">
-          <img src="wp-content/themes/mir-nd/assets/team/elvira.jpg" alt="Эльвира Копёнкина" style="object-position:center 26%">
-          <strong>Эльвира Копёнкина</strong>
-          <span>Эксперт. Юриспруденция и психология.</span>
-        </article>
+<section class="hero" id="top">
+  <div class="wrap hero-row">
+    <div>
+      <p class="kicker">Сертифицированное бутик-агентство</p>
+      <h1>Мир Недвижимости</h1>
+      <p class="tagline">Сделку можно провести спокойно.</p>
+      <p class="lead">Агентство Ирины Скляровой: три постоянных специалиста, которые доводят сложные сделки до Росреестра. Опека, сертификаты, цепочки «Москва — Дмитров» — лично и удалённо.</p>
+      <div class="pills">
+        <a class="pill solid" href="#irina">Познакомиться</a>
+        <a class="pill" href="https://wa.me/79031016640" target="_blank" rel="noreferrer noopener">Написать в WhatsApp</a>
       </div>
     </div>
-  </section>
-
-  <section class="services" id="services">
-    <div class="wrap">
-      <p class="kicker">Услуги</p>
-      <h2>С какой задачей приходите.</h2>
-      <div class="rows">
-        <div class="row">
-          <span class="num">01</span>
-          <b>Продаю в Москве, покупаю в Дмитрове</b>
-          <p>Двойная сделка, сроки и цепочка — чтобы не зависнуть между квартирами.</p>
+    <aside class="hero-aside">
+      <div class="hero-note">
+        <div>
+          <p class="num">3</p>
+          <p>аттестованных специалиста ведут сделку лично. Без колл-центров и франшиз. Офис в ТД «Юбилейный». Оценка 5,0 на Домклик и 2ГИС. «Риелтор года RBG 2025» — Ирина Склярова.</p>
         </div>
-        <div class="row">
-          <span class="num">02</span>
-          <b>Покупаю первый раз или в ипотеку</b>
-          <p>Что проверять, сколько торг, как не переплатить банку по скрытым платежам.</p>
-        </div>
-        <div class="row">
-          <span class="num">03</span>
-          <b>Маткапитал, опека, военный сертификат</b>
-          <p>Сложные сделки, за которые многие не берутся. Для нас это обычная практика.</p>
-        </div>
-        <div class="row">
-          <span class="num">04</span>
-          <b>Нужно провести всё удалённо</b>
-          <p>Если одна сторона в другом регионе: подготовка и регистрация через офис.</p>
-        </div>
+        <p class="hero-note-more">Берём то, чего доска объявлений не умеет: аудит рисков, опеку, военные и жилищные сертификаты, торг, согласование сроков с банком и регистрацию.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="proof" id="proof">
-    <div class="wrap">
-      <p class="kicker">Доверие</p>
-      <h2>Коротко о нас.</h2>
-      <div class="facts">
-        <div class="fact"><b>2018</b><span>агентство в Дмитрове, офис в центре</span></div>
-        <div class="fact"><b>5,0</b><span>Домклик и 2ГИС</span></div>
-        <div class="fact"><b>РГР</b><span>аттестат брокера до 20.02.2028</span></div>
+      <a class="hero-slot" id="hero-slot" href="#reply">
+        <p class="kicker">Ближайшее окно</p>
+        <p class="hero-slot-time" id="hero-slot-time">10:00–12:00</p>
+        <p class="hero-slot-meta" id="hero-slot-meta">Считаем ближайшее окно</p>
+        <span class="hero-slot-go" id="hero-slot-go">Записаться на консультацию</span>
+      </a>
+    </aside>
+  </div>
+</section>
+<section class="section" id="irina">
+  <div class="wrap">
+    <div class="letter-grid">
+      <div class="portrait">
+        <img src="assets/team/irina.jpg" alt="Ирина Склярова" style="object-position:center 38%">
       </div>
-    </div>
-  </section>
-
-  <section class="ask" id="ask">
-    <div class="wrap ask-grid">
       <div>
-        <p class="kicker">Контакты</p>
-        <h2>Опишите задачу.</h2>
-        <p>Перезвоним и скажем, берёмся или нет.</p>
-        <div class="contacts">
-          <p>ТД «Юбилейный», ул. Профессиональная, 3, офис 101–102</p>
-          <p><a href="tel:+79031016640">+7 903 101-66-40</a></p>
-          <p><a href="tel:+78006008696">8 800 600-86-96</a></p>
-          <p><a href="mailto:info@mir-nd.ru">info@mir-nd.ru</a></p>
-          <p><a href="https://wa.me/79031016640">WhatsApp</a> · <a href="https://t.me/mir_nd_dmitrov">Telegram</a></p>
-          <p>Пн–Пт, 10:00–18:00, по записи</p>
+        <p class="kicker">Личный контроль</p>
+        <h2>Письмо руководителя</h2>
+        <blockquote>«Клиенты приходят не за объявлением с Циана. Они приходят, когда страшно потерять деньги: дети, опека, субсидия, переезд из столицы. В такой момент нужен эксперт, который держит процесс от и до».</blockquote>
+        <p class="about-home">Офис на первом этаже ТД «Юбилейный». Сделку ведёт тот, кто её взял: проверка документов, расчёты и регистрация.</p>
+        <a class="text-link" href="#ask">Описать задачу</a>
+      </div>
+    </div>
+    <div class="proof">
+      <div class="stats">
+        <div><b>2018</b>основала агентство в г. Дмитров</div>
+        <div><b>РГР</b>аттестат брокера до 20.02.2028</div>
+        <div><b>5,0</b>рейтинг доверия на 2ГИС и Домклик</div>
+      </div>
+      <div class="awards"><span>«Звезда Подмосковья» 2022 — юрсопровождение</span><span>RBG «Люди года» 2023</span><span>Business Women 2023</span><span>Риелтор года RBG 2025</span></div>
+      <div class="crew" id="team">
+        <p class="kicker">Команда агентства</p>
+        <div class="crew-list">
+          <article class="crew-card">
+            <a href="#irina">
+              <img class="crew-photo" src="assets/team/irina.jpg" alt="Ирина Склярова" style="object-position:center 38%">
+              <div>
+                <b>Ирина Склярова</b>
+                <p>Руководитель, брокер</p>
+                <p>Опека, сертификаты, переезд Москва — Дмитров</p>
+                <p>Брокер РГР, аттестат до 20.02.2028. ГУУ, «Менеджмент организации».</p>
+              </div>
+            </a>
+          </article><article class="crew-card">
+            <a href="#team">
+              <img class="crew-photo" src="assets/team/ksenia.jpg" alt="Ксения Афанасьева" style="object-position:center 48%">
+              <div>
+                <b>Ксения Афанасьева</b>
+                <p>Эксперт по недвижимости</p>
+                <p>Налоги в сделках с недвижимостью</p>
+                <p>Сертификат ГРМО, повышение квалификации «Налоги для риэлтора».</p>
+              </div>
+            </a>
+          </article><article class="crew-card">
+            <a href="#team">
+              <img class="crew-photo" src="assets/team/elvira.jpg" alt="Эльвира Копёнкина" style="object-position:center 26%">
+              <div>
+                <b>Эльвира Копёнкина</b>
+                <p>Эксперт по недвижимости</p>
+                <p>Юриспруденция и психология</p>
+                <p>Бакалавр юриспруденции и психологии, эксперт по недвижимости.</p>
+              </div>
+            </a>
+          </article>
         </div>
       </div>
-      <form action="#" method="post">
-        <input name="name" placeholder="Имя" autocomplete="name">
-        <input name="phone" type="tel" placeholder="Телефон" autocomplete="tel">
-        <textarea name="msg" rows="3" placeholder="Коротко о задаче"></textarea>
-        <label class="consent"><input type="checkbox"> Согласие на обработку персональных данных</label>
-        <button class="btn" type="button">Отправить</button>
-      </form>
     </div>
-  </section>
-</main>
+  </div>
+</section>
+<section class="section" id="situations">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Сценарии</p>
+      <h2>С какой задачей приходите?</h2>
+      <p class="section-lead">Не шаблонные фильтры, а жизненные обстоятельства. Выберите ситуацию — развернется готовый план действий.</p>
+    </div>
+    <div class="sit-list" id="sits">
+      <button class="sit active" data-id="s1" type="button">
+        <span class="dot">01</span>
+        <span><span class="ttl">Продаю в Москве, покупаю в Дмитрове</span><p>Двойная сделка, сроки и цепочка — чтобы не зависнуть между квартирами.</p></span>
+      </button><button class="sit" data-id="s2" type="button">
+        <span class="dot">02</span>
+        <span><span class="ttl">Покупаю первый раз или в ипотеку</span><p>Что проверять, сколько торг, как не переплатить банку по скрытым платежам.</p></span>
+      </button><button class="sit" data-id="s3" type="button">
+        <span class="dot">03</span>
+        <span><span class="ttl">Маткапитал, опека, военный сертификат</span><p>Сложные сделки, за которые многие не берутся. Для нас это рутинная практика.</p></span>
+      </button><button class="sit" data-id="s4" type="button">
+        <span class="dot">04</span>
+        <span><span class="ttl">Нужно провести всё удалённо</span><p>Если одна сторона в другом регионе: подготовка и регистрация через офис.</p></span>
+      </button>
+    </div>
+    <div class="detail" id="detail">
+      <div>
+        <h3>Продаю в Москве, покупаю в Дмитрове</h3>
+        <p>Фиксируем бюджет продажи в Москве и параметры покупки в Дмитрове. Синхронизируем задатки, аккредитивы и даты переезда, чтобы семья не осталась без жилья в переходный период.</p>
+      </div>
+      <div>
+        <a class="btn btn-white" href="#ask">Разобрать переезд</a>
+        <p class="detail-phone">Или сразу руководителю: <a href="tel:+79031016640">+7 903 101-66-40</a></p>
+      </div>
+    </div>
+    <script type="application/json" id="service-details">[{"id": "s1", "title": "Продаю в Москве, покупаю в Дмитрове", "text": "Фиксируем бюджет продажи в Москве и параметры покупки в Дмитрове. Синхронизируем задатки, аккредитивы и даты переезда, чтобы семья не осталась без жилья в переходный период.", "cta": "Разобрать переезд"}, {"id": "s2", "title": "Покупаю первый раз или в ипотеку", "text": "Показываем реальный коридор вариантов под ваш комфортный платеж. Проверяем банк, снижаем переплату по навязанным страховкам и торгуемся с продавцом.", "cta": "Посчитать маршрут покупки"}, {"id": "s3", "title": "Маткапитал, опека, военный сертификат", "text": "Маткапитал, военный сертификат (ЦЖЗ Росвоенипотеки), переселение, доли несовершеннолетних. Согласовываем пакет с органами опеки без отказов.", "cta": "Прислать вводные по документам"}, {"id": "s4", "title": "Нужно провести всё удалённо", "text": "Если стороны в разных городах: готовим договор, организуем выпуск защищенной ЭЦП и регистрируем переход права через аккредитованные каналы.", "cta": "Описать географию сделки"}]</script>
+  </div>
+</section>
+<section class="section" id="compare">
+  <div class="wrap honest-grid">
+    <div class="col a">
+      <h3>Что умеет доска объявлений</h3>
+      <p>Показать фото, цену и телефон продавца. Собрать контакты для спама. Создать иллюзию безопасности.</p>
+      <p>Но она не умеет находить аресты, договариваться с опекой и проверять историю перехода прав.</p>
+    </div>
+    <div class="col b">
+      <h3>Зачем тогда агентство</h3>
+      <p>Ключевой риск спрятан в интервале между согласием продавца и получением выписки из ЕГРН.</p>
+      <p>Мы продаем не доступ к базе. Мы гарантируем безопасность каждого рубля.</p>
+    </div>
+  </div>
+</section>
+<section class="section" id="advantages">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Почему мы</p>
+      <h2>Преимущества</h2>
+    </div>
+    <div class="advantage-list"><article class="advantage"><b>Личный контроль</b><p>Сделку ведут три постоянных специалиста, без колл-центра и франшизы.</p></article><article class="advantage"><b>Сложные документы как обычная практика</b><p>Опека, маткапитал, военные и жилищные сертификаты.</p></article><article class="advantage"><b>Договор и страховка ответственности</b><p>Обязательства фиксируются в договоре. Ответственность застрахована в СПАО «РЕСО-Гарантия».</p></article><article class="advantage"><b>Дмитров и переезд из Москвы</b><p>Синхронизируем продажу в столице и покупку здесь, знаем микрорайоны округа.</p></article><article class="advantage"><b>Можно провести сделку удалённо</b><p>Если сторона в другом регионе, готовим документы и регистрацию через офис.</p></article></div>
+  </div>
+</section>
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Маршрут</p>
+      <h2>Как проходит работа</h2>
+    </div>
+    <div class="step-list"><div class="step"><div class="n">01</div><div><b>Разбор ситуации за 20–30 минут</b><p>Конкретный маршрут: что продаём, что покупаем, где скрыты риски и налоги.</p></div></div><div class="step"><div class="n">02</div><div><b>Официальный договор</b><p>Прозрачные обязательства. Профессиональная ответственность застрахована в СПАО «РЕСО-Гарантия».</p></div></div><div class="step"><div class="n">03</div><div><b>Юридическая экспертиза</b><p>Аресты, банкротство, опека, прописанные лица. Если объект сомнительный — аргументированно отговариваем.</p></div></div><div class="step"><div class="n">04</div><div><b>Переговоры и отстаивание цены</b><p>Аргументированный торг, отсев пустых звонков, синхронизация банковских требований.</p></div></div><div class="step"><div class="n">05</div><div><b>Сделка и безопасные расчеты</b><p>Офис, МФЦ, нотариус или электронная регистрация. Контролируем перевод средств до акта приема-передачи.</p></div></div></div>
+  </div>
+</section>
+<section class="section" id="dmitrov">
+  <div class="wrap">
+    <div class="place">
+      <div class="place-grid">
+        <div>
+          <p class="kicker">Локальный контекст</p>
+          <h2>Дмитров — не дальняя область, а решение</h2>
+          <p>Частый кейс: продать метры в спальном районе Москвы и переехать в комфортный дом или просторную квартиру здесь. Знаем каждый микрорайон и поселок округа.</p>
+        </div>
+        <div class="stat">
+          <div><b>~1 час</b>до Москвы (МЦД/экспресс)</div>
+          <div><b>+15,6%</b>рост земли ИЖС за год</div>
+          <div><b>+10,9%</b>участки по шоссе</div>
+          <div><b>Офис</b>в центре города</div>
+        </div>
+      </div>
+      <div class="place-points">
+        <article><b>Квартиры для переезда</b><p>Коридор домов с качественной инфраструктурой под ваш семейный бюджет и сертификат.</p></article>
+        <article><b>Готовые дома и коттеджи</b><p>Проверка коммуникаций (газ, септик, мощности), статуса земли и реальных расходов на отопление.</p></article>
+        <article><b>Сделка на месте</b><p>Офис в ТД «Юбилейный»: очные встречи сторон, проверка документов и удаленная подача в Росреестр.</p></article>
+      </div>
+      <div class="place-extra">
+        <article>
+          <p class="kicker">Земля</p>
+          <b>Участки под ИЖС</b>
+          <p>Округ лидирует по оформлению частных домов. Проверяем ВРИ, геодезические границы, водоохранные зоны и ограничения на стройку до передачи задатка.</p>
+        </article>
+        <article>
+          <p class="kicker">Дачи</p>
+          <b>СНТ и жилые дома</b>
+          <p>Отличаем летний щитовой домик от строения для круглогодичного проживания с возможностью постоянной прописки и применения маткапитала.</p>
+        </article>
+      </div>
+      <p class="place-source">Статистика предложения: аналитические центры ИНКОМ и МИР КВАРТИР. Итоги регистрации ИЖС по данным Минмособлимущества.</p>
+    </div>
+  </div>
+</section>
+<section class="section" id="awards">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Подтверждение</p>
+      <h2>Грамоты и достижения</h2>
+    </div>
+    <div class="card-grid"><article class="card card-award">
+  <div class="award-fallback"><span>«Звезда Подмосковья» 2022 — юрсопровождение</span></div>
+  <div class="card-body">
+    <h3>«Звезда Подмосковья» 2022 — юрсопровождение</h3>
+    <p class="meta">2022</p>
+  </div>
+</article><article class="card card-award">
+  <div class="award-fallback"><span>RBG «Люди года» 2023</span></div>
+  <div class="card-body">
+    <h3>RBG «Люди года» 2023</h3>
+    <p class="meta">2023</p>
+  </div>
+</article><article class="card card-award">
+  <div class="award-fallback"><span>Business Women 2023</span></div>
+  <div class="card-body">
+    <h3>Business Women 2023</h3>
+    <p class="meta">2023</p>
+  </div>
+</article><article class="card card-award">
+  <div class="award-fallback"><span>Риелтор года RBG 2025</span></div>
+  <div class="card-body">
+    <h3>Риелтор года RBG 2025</h3>
+    <p class="meta">2025</p>
+  </div>
+</article></div>
+  </div>
+</section>
+<section class="section faq" id="faq">
+  <div class="wrap">
+    <div class="section-head"><h2>Частые вопросы</h2></div>
+    <details open><summary>Почему на сайте нет каталога актуальных объявлений?</summary><p>Актуальные лоты остаются на Циане, Авито и Домклик. Проданные объекты и реализованные проекты появляются в разделе «Объекты», когда карточки опубликованы. Подбор варианта на открытом и закрытом рынке, проверка и регистрация остаются работой агентства.</p></details><details><summary>Можно заказать только сопровождение уже найденной квартиры?</summary><p>Да. Мы проведем полную проверку продавца и истории владения, согласуем форму безопасных расчетов (аккредитив/эскроу) и подготовим проект договора.</p></details><details><summary>Работаете ли вы с маткапиталом, сиротами и опекой?</summary><p>Да. В нашем портфолио регулярные сделки с субсидиями, сертификатами переселения, военной ипотекой (Росвоенипотека) и распоряжениями органов опеки.</p></details><details><summary>Сколько стоят услуги?</summary><p>Стоимость зависит от сложности задачи (подбор, альтернатива, проверка готового варианта). Фиксированную сумму мы называем на консультации и закрепляем в договоре.</p></details>
+  </div>
+</section>
+<section class="section" id="reply">
+  <div class="wrap">
+    <div class="reply" id="reply-card">
+      <div class="reply-copy">
+        <p class="kicker">Прямой контакт</p>
+        <h2>Личный ответ руководителя</h2>
+        <p class="reply-status" id="reply-status">Считаем ближайшее окно</p>
+        <p>Ирина сама сопровождает сделки, поэтому часто бывает в МФЦ, банках или на показах. Секретарей нет. Напишите в мессенджер: Ирина отвечает лично в выделенные рабочие интервалы (10:00–12:00 и 18:00–20:00). Для срочных вопросов — звоните по телефону.</p>
+      </div>
+      <div class="slot" id="slot-box">
+        <p class="kicker">Ближайшее окно</p>
+        <p class="slot-time" id="slot-time">10:00–12:00</p>
+        <p class="slot-meta" id="slot-meta"></p>
+        <form class="slot-form" id="slot-form" method="post" action="#">
+          <input type="hidden" name="slot" id="slot-value" value="">
+          <label for="slot-name" class="sr-only">Ваше имя</label>
+          <input id="slot-name" name="name" placeholder="Ваше имя" required autocomplete="name">
+          <label for="slot-phone" class="sr-only">Телефон для связи</label>
+          <input id="slot-phone" name="phone" type="tel" placeholder="Телефон для связи" required autocomplete="tel">
+          <div class="legal-check">
+  <input type="checkbox" id="agree-slot" name="consent" value="1" required>
+  <label for="agree-slot">Даю согласие на обработку персональных данных согласно <a href="#politika">Политике конфиденциальности</a></label>
+</div>
+          <button class="btn" type="submit">Забронировать окно</button>
+          <p class="toast" hidden></p>
+        </form>
+        <p class="slot-note" id="slot-note">Оставьте имя и телефон — перезвоним в это окно.</p>
+        <a class="pill" href="https://wa.me/79031016640" target="_blank" rel="noreferrer noopener">Написать в WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="ask">
+  <div class="wrap">
+    <div class="ask">
+      <div class="ask-grid">
+        <div>
+          <p class="kicker">Первый шаг</p>
+          <h2>Опишите вашу ситуацию</h2>
+          <p class="ask-lead">Перезвоним, ответим на вопросы и предложим безопасный план действий.</p>
+          <div class="contacts">
+            <p>141800, г. Дмитров, ул. Профессиональная, д. 3, ТД «Юбилейный», 1 этаж, оф. 101–102</p>
+            <p><a href="tel:+79031016640">+7 903 101-66-40</a> · <a href="tel:+78006008696">8 800 600-86-96</a></p>
+            <p><a href="mailto:info@mir-nd.ru">info@mir-nd.ru</a></p>
+            <p>Пн–Пт: 10:00–18:00 (по записи)</p>
+            <p><a href="https://yandex.ru/maps/?text=%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%BE%D0%B2%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9F%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%203%20%D0%AE%D0%B1%D0%B8%D0%BB%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9" target="_blank" rel="noreferrer noopener">Открыть в Яндекс.Картах</a></p>
+          </div>
+        </div>
+        <form class="form" method="post" action="#">
+  <div class="hp" aria-hidden="true"><label>Не заполняйте <input type="text" name="mir_hp" tabindex="-1" autocomplete="off" value=""></label></div>
+  <label for="lead-name" class="sr-only">Как к вам обращаться</label>
+  <input id="lead-name" name="name" placeholder="Как к вам обращаться?" required autocomplete="name">
+  <label for="lead-phone" class="sr-only">Номер телефона</label>
+  <input id="lead-phone" name="phone" type="tel" placeholder="Номер телефона" required autocomplete="tel">
+  <label for="lead-case" class="sr-only">Тип задачи</label>
+  <select name="case" id="lead-case">
+    <option value="Продаю в Москве, покупаю в Дмитрове">Продаю в Москве, покупаю в Дмитрове</option><option value="Покупаю первый раз или в ипотеку">Покупаю первый раз или в ипотеку</option><option value="Маткапитал, опека, военный сертификат">Маткапитал, опека, военный сертификат</option><option value="Нужно провести всё удалённо">Нужно провести всё удалённо</option><option value="Надо продать без демпинга">Надо продать без демпинга</option><option value="Сдать, снять, коммерция">Сдать, снять, коммерция</option>
+  </select>
+  <label for="lead-msg" class="sr-only">Краткое описание задачи</label>
+  <textarea id="lead-msg" name="msg" rows="3" placeholder="Кратко о задаче"></textarea>
+  <div class="legal-check">
+  <input type="checkbox" id="agree-lead" name="consent" value="1" required>
+  <label for="agree-lead">Даю согласие на обработку персональных данных согласно <a href="#politika">Политике конфиденциальности</a></label>
+</div>
+  <button class="btn" type="submit">Отправить заявку</button>
+  <p class="toast" hidden></p>
+</form>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="politika">
+  <div class="wrap prose">
+    <h2>Политика конфиденциальности</h2>
+    <p><strong>Оператор:</strong> ООО «МИР НЕДВИЖИМОСТИ» (ИНН 5007105467), ИП Склярова И. В. (ОГРНИП 320508100015156).</p>
+    <p>Форма собирает имя, телефон и описание задачи, чтобы перезвонить и ответить на вопрос. Заявка уходит на почту агентства и не хранится в базе сайта. Согласие можно отозвать письмом на info@mir-nd.ru или по телефону +7 903 101-66-40.</p>
+  </div>
+</section>
 
-<footer id="more">
+</main>
+<footer>
   <div class="wrap">
     <div class="foot">
       <div>
-        <img src="wp-content/themes/mir-nd/assets/brand/wordmark.png" alt="">
+        <img class="brand-wordmark" src="assets/brand/wordmark.png" alt="Мир Недвижимости">
         <b>ООО «МИР НЕДВИЖИМОСТИ»</b><br>
         ИНН 5007105467 · ОГРН 1185007009230<br>
         ИП Склярова И. В. · ОГРНИП 320508100015156
+        <div class="socials">
+          <a class="social" href="https://vk.com/mir_nd" target="_blank" rel="noreferrer noopener">ВКонтакте</a>
+          <a class="social" href="https://t.me/mir_nd_dmitrov" target="_blank" rel="noreferrer noopener">Telegram</a>
+        </div>
       </div>
       <div>
         Сертификат РГР № РОСС РУОС 50 БР 377<br>
-        СПАО «РЕСО-Гарантия» № 908/2786198707
+        Страхование ответственности СПАО «РЕСО-Гарантия» № 908/2786198707
       </div>
-      <div>© 2018–2026 Мир недвижимости, г. Дмитров</div>
+      <div>
+        © 2018–2026 Мир Недвижимости, г. Дмитров.<br>
+        Все права защищены.<br>
+        <a class="policy" href="#politika">Политика конфиденциальности</a>
+      </div>
     </div>
-    <nav class="foot-links" aria-label="Другие разделы">
-      <a href="#">О компании</a>
-      <a href="#">Объекты</a>
-      <a href="#">Истории</a>
-      <a href="#">Преимущества</a>
-      <a href="#">Грамоты</a>
-      <a href="#">СМИ</a>
-      <a href="#">Политика</a>
+    <nav class="foot-links" aria-label="Разделы сайта">
+      <a href="#irina">О компании</a><a href="#situations">Услуги</a><a href="#team">Команда</a><a href="#advantages">Преимущества</a><a href="#awards">Грамоты</a><a href="#ask">Контакты</a><a href="#politika">Политика</a>
     </nav>
   </div>
 </footer>
-
-<div class="mobile-bar">
-  <a class="call" href="tel:+79031016640">Позвонить</a>
-  <a class="wa" href="https://wa.me/79031016640">WhatsApp</a>
 </div>
+<div class="mobile-bar">
+  <a href="tel:+79031016640">Позвонить</a>
+  <a class="wa" href="https://wa.me/79031016640" target="_blank" rel="noreferrer noopener">WhatsApp</a>
+</div>
+<script>
+window.mirNd = {
+  preview: true,
+  phone: "+7 903 101-66-40",
+  phoneHref: "tel:+79031016640"
+};
+</script>
+<script>
+(function () {
+  const pageScroll = document.querySelector(".page-scroll");
+  const narrow = function () {
+    return window.matchMedia("(max-width: 860px)").matches;
+  };
+
+  const scrollToId = function (id) {
+    const target = document.getElementById(id);
+    if (!target) return;
+    if (narrow() && pageScroll) {
+      window.scrollTo(0, 0);
+      const top = target.getBoundingClientRect().top - pageScroll.getBoundingClientRect().top + pageScroll.scrollTop - 8;
+      pageScroll.scrollTo({ top: Math.max(0, top), behavior: "auto" });
+      return;
+    }
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  document.addEventListener("click", function (event) {
+    const link = event.target.closest("a[href]");
+    if (!link || link.target === "_blank" || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    let url;
+    try { url = new URL(link.href, window.location.href); } catch (e) { return; }
+    if (url.origin !== window.location.origin || url.pathname !== window.location.pathname || url.hash.length < 2) return;
+    const id = decodeURIComponent(url.hash.slice(1));
+    if (!document.getElementById(id)) return;
+    event.preventDefault();
+    scrollToId(id);
+    if (window.location.hash !== "#" + id) {
+      history.pushState(null, "", "#" + id);
+    }
+  }, true);
+
+  if (window.location.hash.length > 1) {
+    const initialId = decodeURIComponent(window.location.hash.slice(1));
+    window.addEventListener("load", function () {
+      scrollToId(initialId);
+    });
+  }
+
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+    const closeMenu = function () {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    };
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+    document.addEventListener("click", function (event) {
+      if (!navLinks.classList.contains("open")) return;
+      if (navLinks.contains(event.target) || menuToggle.contains(event.target)) return;
+      closeMenu();
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeMenu();
+    });
+  }
+
+  const dataNode = document.getElementById("service-details");
+  const detailBox = document.getElementById("detail");
+  const sits = document.getElementById("sits");
+  if (dataNode && detailBox && sits) {
+    let items = [];
+    try { items = JSON.parse(dataNode.textContent || "[]"); } catch (e) { items = []; }
+    const byId = {};
+    items.forEach(function (item) { byId[item.id] = item; });
+    const phone = (window.mirNd && mirNd.phone) || "";
+    const phoneHref = (window.mirNd && mirNd.phoneHref) || "";
+
+    const paint = function (id) {
+      const item = byId[id];
+      if (!item) return;
+      detailBox.innerHTML = "";
+      const copy = document.createElement("div");
+      const heading = document.createElement("h3");
+      heading.textContent = item.title;
+      const text = document.createElement("p");
+      text.textContent = item.text;
+      copy.append(heading, text);
+      const side = document.createElement("div");
+      const cta = document.createElement("a");
+      cta.className = "btn btn-white";
+      cta.href = "#ask";
+      cta.textContent = item.cta || "Оставить заявку";
+      cta.addEventListener("click", function () { setCase(item.title); });
+      side.append(cta);
+      if (phone && phoneHref) {
+        const note = document.createElement("p");
+        note.className = "detail-phone";
+        note.append("Или сразу руководителю: ");
+        const tel = document.createElement("a");
+        tel.href = phoneHref;
+        tel.textContent = phone;
+        note.append(tel);
+        side.append(note);
+      }
+      detailBox.append(copy, side);
+      sits.querySelectorAll(".sit").forEach(function (btn) {
+        btn.classList.toggle("active", btn.dataset.id === id);
+      });
+      setCase(item.title);
+    };
+
+    sits.addEventListener("click", function (event) {
+      const btn = event.target.closest("[data-id]");
+      if (btn) paint(btn.dataset.id);
+    });
+    const first = sits.querySelector(".sit");
+    if (first) paint(first.dataset.id);
+  }
+
+  function setCase(title) {
+    const select = document.getElementById("lead-case");
+    if (!select) return;
+    Array.from(select.options).forEach(function (option) {
+      if (option.value === title) select.value = title;
+    });
+  }
+
+  const task = new URLSearchParams(window.location.search).get("task");
+  if (task) setCase(task);
+
+  const getMoscowTime = function () {
+    const stamp = new Date().toLocaleString("sv-SE", { timeZone: "Europe/Moscow" });
+    const parts = stamp.split(" ");
+    const date = parts[0];
+    const clock = (parts[1] || "00:00:00").split(":");
+    const hour = Number(clock[0]);
+    const minute = Number(clock[1]);
+    const weekday = new Date(date + "T12:00:00+03:00").getDay();
+    return { date: date, minutes: hour * 60 + minute, weekday: weekday };
+  };
+
+  const addDays = function (iso, days) {
+    const d = new Date(iso + "T12:00:00+03:00");
+    d.setDate(d.getDate() + days);
+    return d.toLocaleDateString("sv-SE", { timeZone: "Europe/Moscow" });
+  };
+
+  const formatWeekday = function (iso) {
+    return new Date(iso + "T12:00:00+03:00").toLocaleDateString("ru-RU", {
+      weekday: "short",
+      day: "numeric",
+      month: "long",
+      timeZone: "Europe/Moscow"
+    });
+  };
+
+  const getNearestSlot = function () {
+    const now = getMoscowTime();
+    if (now.weekday === 0 || now.weekday === 6) {
+      const next = addDays(now.date, now.weekday === 0 ? 1 : 2);
+      return { label: "10:00–12:00", when: formatWeekday(next), open: false };
+    }
+    if (now.minutes < 12 * 60) {
+      return {
+        label: "10:00–12:00",
+        when: formatWeekday(now.date),
+        open: now.minutes >= 10 * 60 && now.minutes < 12 * 60
+      };
+    }
+    if (now.minutes < 20 * 60) {
+      return {
+        label: "18:00–20:00",
+        when: formatWeekday(now.date),
+        open: now.minutes >= 18 * 60
+      };
+    }
+    let next = addDays(now.date, 1);
+    const nextDay = new Date(next + "T12:00:00+03:00").getDay();
+    if (nextDay === 6) next = addDays(now.date, 3);
+    if (nextDay === 0) next = addDays(now.date, 2);
+    return { label: "10:00–12:00", when: formatWeekday(next), open: false };
+  };
+
+  const renderSlots = function () {
+    const slot = getNearestSlot();
+    const time = document.getElementById("slot-time");
+    const meta = document.getElementById("slot-meta");
+    const status = document.getElementById("reply-status");
+    const hidden = document.getElementById("slot-value");
+    if (time) time.textContent = slot.label;
+    if (meta) meta.textContent = slot.when;
+    if (status) {
+      status.textContent = slot.open
+        ? "Окно открыто · Ирина отвечает лично"
+        : "Сейчас вне окна ответов · оставьте запись на ближайшее время";
+    }
+    if (hidden) hidden.value = slot.label + " · " + slot.when;
+    const heroTime = document.getElementById("hero-slot-time");
+    const heroMeta = document.getElementById("hero-slot-meta");
+    const heroGo = document.getElementById("hero-slot-go");
+    if (heroTime) heroTime.textContent = slot.label;
+    if (heroMeta) heroMeta.textContent = slot.open ? slot.when + " · окно открыто" : slot.when + " · ближайшее окно";
+    if (heroGo) heroGo.textContent = "Записаться на консультацию";
+  };
+
+  if (document.getElementById("slot-time") || document.getElementById("hero-slot-time")) {
+    renderSlots();
+  }
+
+  document.querySelectorAll("form.form, form.slot-form").forEach(function (form) {
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      if (form.classList.contains("slot-form")) renderSlots();
+      const button = form.querySelector("button[type=submit]");
+      const toast = form.querySelector(".toast");
+      const original = button ? button.textContent : "";
+      if (button) {
+        button.disabled = true;
+        button.textContent = "Отправка...";
+      }
+      try {
+        if (window.mirNd && mirNd.preview) {
+          if (toast) {
+            toast.hidden = false;
+            toast.textContent = "Это показ макета: заявка не уходит. На рабочем сайте она придёт на почту агентства.";
+          }
+          return;
+        }
+        const response = await fetch((window.mirNd && mirNd.ajax) || "/wp-admin/admin-ajax.php", {
+          method: "POST",
+          body: new FormData(form),
+          credentials: "same-origin"
+        });
+        const data = await response.json();
+        if (toast) {
+          toast.hidden = false;
+          toast.textContent = data.message || (data.ok ? "Сообщение отправлено." : "Не удалось отправить.");
+        }
+        if (data.ok) form.reset();
+      } catch (error) {
+        if (toast) {
+          toast.hidden = false;
+          toast.textContent = "Не удалось отправить. Позвоните нам" + (window.mirNd && mirNd.phone ? ": " + mirNd.phone : ".");
+        }
+      } finally {
+        if (button) {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    const button = event.target.closest(".video-facade");
+    if (!button) return;
+    const src = button.getAttribute("data-src");
+    if (!src) return;
+    const frame = document.createElement("iframe");
+    frame.className = "video-frame";
+    frame.src = src + (src.indexOf("?") === -1 ? "?" : "&") + "autoplay=1";
+    frame.title = "Видео";
+    frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    frame.allowFullscreen = true;
+    button.replaceWith(frame);
+  });
+})();
+
+  const tip = new URLSearchParams(window.location.search).get("tip") || "";
+  document.querySelectorAll(".filters a.filter").forEach(function (link) {
+    const url = new URL(link.href, window.location.href);
+    link.classList.toggle("active", (url.searchParams.get("tip") || "") === tip);
+  });
+
+</script>
 </body>
 </html>
